@@ -1,6 +1,10 @@
-let config = {};
+let AxiosParams = {};
 process.env.NODE_ENV === 'development' ?
-  config.baseUrl = 'http://localhost:4000' :
-  config.baseUrl = 'https://jiepp.com';
-export default config;
+  AxiosParams.baseUrl = 'http://localhost:4000' :
+  AxiosParams.baseUrl = 'https://jiepp.com';
+AxiosParams.timeout = 7000;
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+export default AxiosParams;
+
 

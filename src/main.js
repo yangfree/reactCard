@@ -9,7 +9,7 @@ import router from './router';
 
 Vue.use(ElementUi);
 
-import './api/axios';
+import './api/api';
 
 Vue.config.productionTip = false
 
