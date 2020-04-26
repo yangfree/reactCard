@@ -40,6 +40,7 @@ export default {
 <style lang='less' scoped>
 .my-nav {
   max-width: 15%;
+  margin-top: 75px;
   // .nav-radio {
   //   text-align: right;
   // }
