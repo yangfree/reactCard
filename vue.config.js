@@ -21,8 +21,8 @@ module.exports = {
       }
     }
   },
-  css: {
-    extract: true,
-    modules: false
-  }
+  // css: {
+  //   extract: true,
+  //   modules: false
+  // }
 }

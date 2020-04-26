@@ -3,13 +3,13 @@
     <!-- <div class="nav-radio">
       <i class="el-icon-menu"></i>
       <i class="el-icon-arrow-left"></i>
-    </div> -->
+    </div>-->
     <el-menu
       :default-active="this.$route.path"
       class="el-menu-vertical-demo"
       router
       model="horizontal"
-      active-text-color="#ffd04b"
+      active-text-color="#409EFF"
     >
       <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
         <template slot="title">
@@ -39,8 +39,8 @@ export default {
 
 <style lang='less' scoped>
 .my-nav {
-  max-width: 15%;
-  margin-top: 75px;
+  // max-width: 200px;
+  margin-top: 25px;
   // .nav-radio {
   //   text-align: right;
   // }
