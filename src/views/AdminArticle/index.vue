@@ -1,11 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="admin-article">
+    <h1>admin article</h1>
   </div>
 </template>
 <script>
 export default {
-  name: 'About',
+  name: 'AdminArticle',
 }
 </script>
 <style lang="less" scoped>

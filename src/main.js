@@ -11,6 +11,15 @@ Vue.use(ElementUi);
 
 import './api/api';
 
+// 路由跳转全局拦截
+router.beforeEach((to, from, next) => {
+  // console.log(to.meta.title);
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  next();
+})
+
 Vue.config.productionTip = false
 
 new Vue({
