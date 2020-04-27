@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <!-- <h2>杨洁个人网站后台管理系统</h2> -->
-    <!-- TODO: 切换在一个盒子之内完成,不要跳转页面 -->
     <el-container>
       <el-header>
         <MyHeader />
