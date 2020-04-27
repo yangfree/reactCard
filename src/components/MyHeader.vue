@@ -22,14 +22,8 @@ export default {
 
 <style lang='less' scoped>
 .my-header {
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
   border-bottom: 1px solid #ccc;
   .main {
-    // max-width: 1260px;
-    // margin: 0 auto;
     display: flex;
     justify-content: space-between;
     .user-info {
