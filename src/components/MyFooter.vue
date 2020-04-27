@@ -12,9 +12,6 @@
 
 <style lang='less' scoped>
 .my-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   height: 60px;
   line-height: 60px;

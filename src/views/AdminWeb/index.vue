@@ -20,7 +20,7 @@
     <el-container>
       <!-- 基本信息填写 -->
       <div class="web-info" v-if="hideOrShow.websiteInfo">
-        <el-form :label-position="labelPosition" label-width="120px" :model="formWebsiteInfo">
+        <el-form label-position="left" label-width="120px" :model="formWebsiteInfo">
           <el-form-item label="网站名称">
             <el-input v-model="formWebsiteInfo.name"></el-input>
           </el-form-item>

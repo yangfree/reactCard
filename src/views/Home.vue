@@ -14,9 +14,9 @@
           <router-view />
         </el-main>
       </el-container>
-      <el-footer>
+      <!-- <el-footer>
         <MyFooter />
-      </el-footer>
+      </el-footer> -->
     </el-container>
   </div>
 </template>
@@ -36,8 +36,5 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-// .home {
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
+
 </style>

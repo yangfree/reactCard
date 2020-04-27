@@ -12,6 +12,12 @@ import router from './router';
 
 Vue.use(ElementUi);
 
+// 引入markdown-editor
+// import mavonEditor from 'mavon-editor';
+// import 'mavon-editor/dist/css/index.css';
+// Vue.use(mavonEditor);
+
+
 import './api/api';
 
 // 路由跳转全局拦截
