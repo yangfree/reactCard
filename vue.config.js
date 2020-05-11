@@ -7,8 +7,8 @@ module.exports = {
     port: 4000,
     open: true,
     proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
+      '/admin': {
+        target: 'http://localhost:3001/',
         changeOringe: true,
         ws: true
       }

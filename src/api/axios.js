@@ -22,10 +22,14 @@ export function get(url, params) {
   return new Promise((resolve, reject) => {
     $http.get(url, params)
       .then(res => {
-        resolve(res);
+        if (res.status === 200) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
       })
       .catch(err => {
-        reject(err);
+        reject(err.data);
       })
   })
 }

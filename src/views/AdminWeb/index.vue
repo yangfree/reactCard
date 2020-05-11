@@ -22,7 +22,7 @@
       <div class="web-info" v-if="hideOrShow.websiteInfo">
         <el-form label-position="left" label-width="120px" :model="formWebsiteInfo">
           <el-form-item label="网站名称">
-            <el-input v-model="formWebsiteInfo.name"></el-input>
+            <el-input v-model="formWebsiteInfo.title"></el-input>
           </el-form-item>
           <el-form-item label="副标题">
             <el-input v-model="formWebsiteInfo.description"></el-input>
@@ -34,7 +34,7 @@
             <el-input v-model="formWebsiteInfo.version"></el-input>
           </el-form-item>
           <el-form-item label="更新时间">
-            <el-input v-model="formWebsiteInfo.update"></el-input>
+            <el-input v-model="formWebsiteInfo.updateTime"></el-input>
           </el-form-item>
           <el-form-item label="备案号">
             <el-input v-model="formWebsiteInfo.icp"></el-input>
@@ -45,7 +45,7 @@
       <div class="web-connect" v-if="hideOrShow.websiteConnect">
         <el-form :label-position="labelPosition" label-width="120px" :model="formWebsiteConnect">
           <el-form-item label="邮箱">
-            <el-input v-model="formWebsiteConnect.eamil"></el-input>
+            <el-input v-model="formWebsiteConnect.email"></el-input>
           </el-form-item>
           <el-form-item label="微博">
             <el-input v-model="formWebsiteConnect.weibo"></el-input>
@@ -60,12 +60,18 @@
       </div>
       <!-- 友情链接 -->
       <div class="web-friends" v-if="hideOrShow.websiteFriends">
+        <template>
+          <el-table :data="websiteFriendsList" style="width: 80%; margin:0 auto 25px;">
+            <el-table-column prop="name" label="姓名"></el-table-column>
+            <el-table-column prop="webLink" label="网址"></el-table-column>
+          </el-table>
+        </template>
         <el-form :label-position="labelPosition" label-width="120px" :model="formWebsiteFriends">
           <el-form-item label="名称">
             <el-input v-model="formWebsiteFriends.name"></el-input>
           </el-form-item>
           <el-form-item label="网址">
-            <el-input v-model="formWebsiteFriends.website"></el-input>
+            <el-input v-model="formWebsiteFriends.webLink"></el-input>
           </el-form-item>
         </el-form>
       </div>
@@ -83,34 +89,41 @@
     </el-container>
     <el-container>
       <div class="btn-submit">
-        <el-button type="primary" :loading="submitAll.loading" @click="buttonStatus">{{submitAll.text}}</el-button>
+        <el-button
+          type="primary"
+          :loading="submitAll.loading"
+          @click="buttonStatus"
+        >{{submitAll.text}}</el-button>
       </div>
     </el-container>
   </div>
 </template>
 <script>
+import { getBasics, getConnects, getFriendsList } from "@/api/api.js";
+
 export default {
   name: "AdminWeb",
   data() {
     return {
       labelPosition: "right",
       formWebsiteInfo: {
-        name: "",
-        description: "",
-        keywords: "",
-        version: "",
-        update: "",
-        icp: ""
+        // title: "",
+        // description: "",
+        // keywords: "",
+        // version: "",
+        // updateTime: "",
+        // icp: ""
       },
       formWebsiteConnect: {
-        email: "",
-        weibo: "",
-        github: "",
-        zhihu: ""
+        // email: "",
+        // weibo: "",
+        // github: "",
+        // zhihu: ""
       },
+      websiteFriendsList: [],
       formWebsiteFriends: {
         name: "",
-        website: ""
+        webLink: ""
       },
       formWebsiteFile: {
         protocol: "",
@@ -148,7 +161,41 @@ export default {
       }
     };
   },
+  created() {
+    // 获取网站信息
+    this.getBasicsInfo();
+    this.getConnectsInfo();
+    this.getFriendsInfo();
+  },
   methods: {
+    getFriendsInfo() {
+      getFriendsList()
+        .then(res => {
+          console.log(res);
+          this.websiteFriendsList = res;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getConnectsInfo() {
+      getConnects()
+        .then(res => {
+          this.formWebsiteConnect = res;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getBasicsInfo() {
+      getBasics()
+        .then(res => {
+          this.formWebsiteInfo = res;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     buttonStatus() {
       this.submitAll.loading = true;
       this.submitAll.text = "提交中";
