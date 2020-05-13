@@ -211,7 +211,7 @@ export default {
     bascisSubmit() {
       this.submitAll.loading = true;
       this.submitAll.text = "提交中";
-      updateBasics("/updatebasics", this.formWebsiteInfo)
+      updateBasics("", this.formWebsiteInfo)
         .then(res => {
           // console.log(res);
           this.submitAll.loading = false;

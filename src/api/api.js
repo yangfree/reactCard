@@ -23,5 +23,5 @@ export const getFilesList = (url, params) => {
 
 // 更新基本信息
 export const updateBasics = (url, params) => {
-  return put(`/admin${url}`, params);
+  return put(`/admin`, params);
 }
