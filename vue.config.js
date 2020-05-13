@@ -10,7 +10,10 @@ module.exports = {
       '/admin': {
         target: 'http://localhost:3001/',
         changeOringe: true,
-        ws: true
+        ws: true,
+        pathRewrite: {
+          '^admin': ''
+        }
       }
     },
   },

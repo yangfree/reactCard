@@ -37,7 +37,16 @@
             <el-input v-model="formWebsiteInfo.updateTime"></el-input>
           </el-form-item>
           <el-form-item label="备案号">
-            <el-input v-model="formWebsiteInfo.icp"></el-input>
+            <el-input v-model="formWebsiteInfo.icp" disabled></el-input>
+          </el-form-item>
+          <el-form-item>
+            <div class="btn-submit">
+              <el-button
+                type="primary"
+                :loading="submitAll.loading"
+                @click="bascisSubmit"
+              >{{submitAll.text}}</el-button>
+            </div>
           </el-form-item>
         </el-form>
       </div>
@@ -56,6 +65,15 @@
           <el-form-item label="Github">
             <el-input v-model="formWebsiteConnect.github"></el-input>
           </el-form-item>
+          <el-form-item>
+            <div class="btn-submit">
+              <el-button
+                type="primary"
+                :loading="submitAll.loading"
+                @click="buttonStatus"
+              >{{submitAll.text}}</el-button>
+            </div>
+          </el-form-item>
         </el-form>
       </div>
       <!-- 友情链接 -->
@@ -73,33 +91,54 @@
           <el-form-item label="网址">
             <el-input v-model="formWebsiteFriends.webLink"></el-input>
           </el-form-item>
+          <el-form-item>
+            <div class="btn-submit">
+              <el-button
+                type="primary"
+                :loading="submitAll.loading"
+                @click="buttonStatus"
+              >{{submitAll.text}}</el-button>
+            </div>
+          </el-form-item>
         </el-form>
       </div>
       <!-- 文件协议 -->
       <div class="web-file" v-if="hideOrShow.websiteFile">
         <el-form :label-position="labelPosition" label-width="120px" :model="formWebsiteFile">
-          <el-form-item label="邮箱">
-            <el-input type="textarea" v-model="formWebsiteFile.protocol"></el-input>
+          <el-form-item v-for="(item,index) in formWebsiteFile.files" :key="index">
+            <el-input type="text" v-model="item.title"></el-input>
+            <el-input type="textarea" v-model="item.content"></el-input>
           </el-form-item>
-          <el-form-item label="微博">
-            <el-input type="textarea" v-model="formWebsiteFile.privacy"></el-input>
+          <el-form-item>
+            <div class="btn-submit">
+              <el-button
+                type="primary"
+                :loading="submitAll.loading"
+                @click="bascisSubmit"
+              >{{submitAll.text}}</el-button>
+            </div>
           </el-form-item>
         </el-form>
       </div>
     </el-container>
-    <el-container>
-      <div class="btn-submit">
-        <el-button
-          type="primary"
-          :loading="submitAll.loading"
-          @click="buttonStatus"
-        >{{submitAll.text}}</el-button>
-      </div>
-    </el-container>
+    <!-- <template>
+      <el-button :plain="true" @click="openMsg1">成功</el-button>
+      <el-button :plain="true" @click="openMsg2">警告</el-button>
+      <el-button :plain="true" @click="openMsg3">消息</el-button>
+      <el-button :plain="true" @click="openMsg4">错误</el-button>
+    </template> -->
+  </div>
+</template>
   </div>
 </template>
 <script>
-import { getBasics, getConnects, getFriendsList } from "@/api/api.js";
+import {
+  getBasics,
+  getConnects,
+  getFriendsList,
+  getFilesList,
+  updateBasics
+} from "@/api/api.js";
 
 export default {
   name: "AdminWeb",
@@ -107,12 +146,12 @@ export default {
     return {
       labelPosition: "right",
       formWebsiteInfo: {
-        // title: "",
-        // description: "",
-        // keywords: "",
-        // version: "",
-        // updateTime: "",
-        // icp: ""
+        title: "",
+        description: "",
+        keywords: "",
+        version: "",
+        updateTime: "",
+        icp: ""
       },
       formWebsiteConnect: {
         // email: "",
@@ -122,12 +161,12 @@ export default {
       },
       websiteFriendsList: [],
       formWebsiteFriends: {
-        name: "",
-        webLink: ""
+        // name: "",
+        // webLink: ""
       },
       formWebsiteFile: {
-        protocol: "",
-        privacy: ""
+        // protocol: "",
+        // privacy: ""
       },
       // 控制盒子切换
       hideOrShow: {
@@ -163,15 +202,44 @@ export default {
   },
   created() {
     // 获取网站信息
+    this.getFilesInfo();
     this.getBasicsInfo();
     this.getConnectsInfo();
     this.getFriendsInfo();
   },
   methods: {
+    bascisSubmit() {
+      this.submitAll.loading = true;
+      this.submitAll.text = "提交中";
+      updateBasics("/updatebasics", this.formWebsiteInfo)
+        .then(res => {
+          // console.log(res);
+          this.submitAll.loading = false;
+          this.submitAll.text = "提交";
+          this.$message({
+            message: "提交成功",
+            type: "success",
+            duration: 1500,
+          });
+          this.getFilesInfo();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getFilesInfo() {
+      getFilesList()
+        .then(res => {
+          this.formWebsiteFile = res;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     getFriendsInfo() {
       getFriendsList()
         .then(res => {
-          console.log(res);
+          // console.log(res);
           this.websiteFriendsList = res;
         })
         .catch(err => {
@@ -197,9 +265,9 @@ export default {
         });
     },
     buttonStatus() {
-      this.submitAll.loading = true;
-      this.submitAll.text = "提交中";
-      alert(1);
+      // this.submitAll.loading = true;
+      // this.submitAll.text = "提交中";
+      // alert(1);
     },
     changeTag(label) {
       if (label) {

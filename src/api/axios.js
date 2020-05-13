@@ -52,7 +52,9 @@ export function put(url, params) {
   return new Promise((resolve, reject) => {
     $http.put(url, params)
       .then(res => {
-        resolve(res);
+        if (res.status === 200) {
+          resolve(res.data);
+        }
       })
       .catch(err => {
         reject(err);
