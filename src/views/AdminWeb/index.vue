@@ -70,7 +70,7 @@
               <el-button
                 type="primary"
                 :loading="submitAll.loading"
-                @click="buttonStatus"
+                @click="connectsSubmit"
               >{{submitAll.text}}</el-button>
             </div>
           </el-form-item>
@@ -82,6 +82,12 @@
           <el-table :data="websiteFriendsList" style="width: 80%; margin:0 auto 25px;">
             <el-table-column prop="name" label="姓名"></el-table-column>
             <el-table-column prop="webLink" label="网址"></el-table-column>
+            <el-table-column fixed="right" label="操作" width="200">
+              <template slot-scope="scope">
+                <el-button @click="editFrined(scope.row)" type="text" size="small">编辑</el-button>
+                <el-button @click="deleteFriend(scope.row)" type="text" size="small">删除</el-button>
+              </template>
+            </el-table-column>
           </el-table>
         </template>
         <el-form :label-position="labelPosition" label-width="120px" :model="formWebsiteFriends">
@@ -96,7 +102,7 @@
               <el-button
                 type="primary"
                 :loading="submitAll.loading"
-                @click="buttonStatus"
+                @click="friendsSubmit"
               >{{submitAll.text}}</el-button>
             </div>
           </el-form-item>
@@ -126,7 +132,7 @@
       <el-button :plain="true" @click="openMsg2">警告</el-button>
       <el-button :plain="true" @click="openMsg3">消息</el-button>
       <el-button :plain="true" @click="openMsg4">错误</el-button>
-    </template> -->
+    </template>-->
   </div>
 </template>
   </div>
@@ -137,7 +143,10 @@ import {
   getConnects,
   getFriendsList,
   getFilesList,
-  updateBasics
+  updateBasics,
+  updateConnets,
+  addFriend,
+  deleteFriend
 } from "@/api/api.js";
 
 export default {
@@ -154,10 +163,10 @@ export default {
         icp: ""
       },
       formWebsiteConnect: {
-        // email: "",
-        // weibo: "",
-        // github: "",
-        // zhihu: ""
+        email: "",
+        weibo: "",
+        github: "",
+        zhihu: ""
       },
       websiteFriendsList: [],
       formWebsiteFriends: {
@@ -208,6 +217,77 @@ export default {
     this.getFriendsInfo();
   },
   methods: {
+    deleteFriend(item) {
+      // console.log(item._id);
+      // return false;
+      deleteFriend("", item._id)
+        .then(res => {
+          console.log(res);
+          this.$message({
+            message: "删除成功",
+            type: "success",
+            duration: 1500
+          });
+          this.getFriendsInfo();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    editFrined(item) {
+      console.log(item);
+    },
+    friendsSubmit() {
+      // 判断值是否为空
+      if (!this.formWebsiteFriends.name || !this.formWebsiteFriends.webLink) {
+        this.$message({
+          message: "请完善信息",
+          type: "warning",
+          duration: 1500
+        });
+        return false;
+      }
+
+      //改变按钮提交状态
+      this.submitAll.text = "提交中";
+      this.submitAll.loading = true;
+      addFriend("", this.formWebsiteFriends)
+        .then(res => {
+          console.log(res);
+          this.submitAll.text = "提交";
+          this.submitAll.loading = false;
+          this.$message({
+            message: "添加成功",
+            type: "success",
+            duration: 1500
+          });
+          this.formWebsiteFriends.name = "";
+          this.formWebsiteFriends.webLink = "";
+          this.getFriendsInfo();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    connectsSubmit() {
+      this.submitAll.text = "提交中";
+      this.submitAll.loading = true;
+      updateConnets("", this.formWebsiteConnect)
+        .then(res => {
+          // console.log(res);
+          this.submitAll.text = "提交";
+          this.submitAll.loading = false;
+          this.$message({
+            message: "提交成功",
+            type: "success",
+            duration: 1500
+          });
+          this.getConnectsInfo();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     bascisSubmit() {
       this.submitAll.loading = true;
       this.submitAll.text = "提交中";
@@ -219,9 +299,9 @@ export default {
           this.$message({
             message: "提交成功",
             type: "success",
-            duration: 1500,
+            duration: 1500
           });
-          this.getFilesInfo();
+          this.getBasicsInfo();
         })
         .catch(err => {
           console.log(err);

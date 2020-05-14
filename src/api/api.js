@@ -25,3 +25,17 @@ export const getFilesList = (url, params) => {
 export const updateBasics = (url, params) => {
   return put(`/admin`, params);
 }
+
+// 更新联系方式信息请求
+export const updateConnets = (url, params) => {
+  return put('/admin/connects', params);
+}
+
+// 增加友情链接
+export const addFriend = (url, params) => {
+  return post('/admin/friends', params);
+}
+// 删除友情链接
+export const deleteFriend = (url, params) => {
+  return del (`/admin/friends?${params}`);
+}
