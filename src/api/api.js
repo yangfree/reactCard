@@ -37,5 +37,10 @@ export const addFriend = (url, params) => {
 }
 // 删除友情链接
 export const deleteFriend = (url, params) => {
-  return del (`/admin/friends?${params}`);
+  return del (`/admin/friends`, params);
+}
+
+// 更新友情链接
+export const putFriend = (url, params) => {
+  return put('/admin/friends', params);
 }

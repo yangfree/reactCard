@@ -84,7 +84,7 @@
             <el-table-column prop="webLink" label="网址"></el-table-column>
             <el-table-column fixed="right" label="操作" width="200">
               <template slot-scope="scope">
-                <el-button @click="editFrined(scope.row)" type="text" size="small">编辑</el-button>
+                <el-button @click="editFrined(scope.row)" type="text" size="small">更新</el-button>
                 <el-button @click="deleteFriend(scope.row)" type="text" size="small">删除</el-button>
               </template>
             </el-table-column>
@@ -99,6 +99,7 @@
           </el-form-item>
           <el-form-item>
             <div class="btn-submit">
+              <el-button type="primary" icon="el-icon-refresh" @click="updateFriendSubmit">更新</el-button>
               <el-button
                 type="primary"
                 :loading="submitAll.loading"
@@ -146,7 +147,8 @@ import {
   updateBasics,
   updateConnets,
   addFriend,
-  deleteFriend
+  deleteFriend,
+  putFriend
 } from "@/api/api.js";
 
 export default {
@@ -170,8 +172,9 @@ export default {
       },
       websiteFriendsList: [],
       formWebsiteFriends: {
-        // name: "",
-        // webLink: ""
+        id: "",
+        name: "",
+        webLink: ""
       },
       formWebsiteFile: {
         // protocol: "",
@@ -217,12 +220,29 @@ export default {
     this.getFriendsInfo();
   },
   methods: {
-    deleteFriend(item) {
-      // console.log(item._id);
-      // return false;
-      deleteFriend("", item._id)
+    updateFriendSubmit() {
+      // console.log("更新", this.formWebsiteFriends);
+      putFriend("", this.formWebsiteFriends)
         .then(res => {
-          console.log(res);
+          // console.log(res);
+          this.formWebsiteFriends.id = "";
+          this.formWebsiteFriends.name = "";
+          this.formWebsiteFriends.webLink = "";
+          this.$message({
+            message: "更新成功",
+            type: "success",
+            duration: 1500
+          });
+          this.getFriendsInfo();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    deleteFriend(item) {
+      deleteFriend("", { data: { id: item._id } })
+        .then(res => {
+          // console.log(res);
           this.$message({
             message: "删除成功",
             type: "success",
@@ -235,7 +255,10 @@ export default {
         });
     },
     editFrined(item) {
-      console.log(item);
+      // console.log(item);
+      this.formWebsiteFriends.id = item._id;
+      this.formWebsiteFriends.name = item.name;
+      this.formWebsiteFriends.webLink = item.webLink;
     },
     friendsSubmit() {
       // 判断值是否为空
@@ -253,7 +276,7 @@ export default {
       this.submitAll.loading = true;
       addFriend("", this.formWebsiteFriends)
         .then(res => {
-          console.log(res);
+          // console.log(res);
           this.submitAll.text = "提交";
           this.submitAll.loading = false;
           this.$message({
