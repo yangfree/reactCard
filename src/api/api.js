@@ -44,3 +44,18 @@ export const deleteFriend = (url, params) => {
 export const putFriend = (url, params) => {
   return put('/admin/friends', params);
 }
+
+// 删除用户信息
+export const deleteUser = (url, params) => {
+  return del('/admin/users', params);
+}
+
+// 添加文章
+export const postArticle = (url, params) => {
+  return post('/admin/article', params);
+}
+
+// 获取文章列表
+export const getArticles = (url, params) => {
+  return get('/admin/articles', params);
+}

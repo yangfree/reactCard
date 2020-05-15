@@ -5,7 +5,26 @@
       <el-breadcrumb-item>杨洁个人网站管理系统</el-breadcrumb-item>
       <el-breadcrumb-item>文章管理</el-breadcrumb-item>
     </el-breadcrumb>
-
+    <!-- 内容展示区域 -->
+    <el-container>
+      <!-- <ul>
+        <li v-for="(item,index) in articleList" :key="index">
+          <a @click="jumpArticle(item)">{{item.title}}</a>
+        </li>
+      </ul>-->
+      <el-card class="box-card" style="width:100%;margin: 35px;">
+        <div slot="header" class="clearfix">
+          <span>文章列表</span>
+        </div>
+        <div
+          v-for="(item,index) in articleList"
+          :key="index"
+          @click="jumpArticle(item)"
+          class="text item"
+          style="fontSize: 14px; padding: 5px 0; text-indent:2em;backgroundColor: #e5e5e5;margin-bottom: 10px;"
+        >{{item.title}}</div>
+      </el-card>
+    </el-container>
     <!-- 输入内容板块 -->
     <el-container class="article-content">
       <el-form ref="form" :model="fromArticle" style="width: 100%">
@@ -13,14 +32,14 @@
           <el-input v-model="fromArticle.title" placeholder="请输入文章标题"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="fromArticle.keywords" placeholder="请输入文章关键词"></el-input>
+          <el-input v-model="fromArticle.tags" placeholder="请输入文章关键词"></el-input>
         </el-form-item>
         <el-form-item>
           <el-input v-model="fromArticle.directory" placeholder="请输入文章分类"></el-input>
         </el-form-item>
         <el-form-item>
           <!-- 富文本编辑器 -->
-          <mavon-editor v-model="fromArticle.editorContent" ref="editor" placeholder="请输入文章内容" />
+          <mavon-editor v-model="fromArticle.content" ref="editor" placeholder="请输入文章内容" />
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">发表</el-button>
@@ -32,6 +51,7 @@
 <script>
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
+import { getArticles, postArticle } from "@/api/api.js";
 
 export default {
   name: "AdminArticle",
@@ -40,16 +60,58 @@ export default {
   },
   data() {
     return {
+      articleList: [],
       fromArticle: {
         title: "",
         directory: "",
-        keywords: "",
-        editorContent: ""
+        tags: "",
+        content: "",
+        hot: "0",
+        createTime: "2020-05-15",
+        updateTime: ""
       }
     };
   },
+  created() {
+    this.getArticleList();
+  },
   methods: {
-    onSubmit() {}
+    jumpArticle(val) {
+      // console.log(val);
+      this.$router.push({
+        name: "ArticleOne",
+        params: val
+      });
+    },
+    getArticleList() {
+      getArticles()
+        .then(res => {
+          // console.log(res);
+          this.articleList = res;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    onSubmit() {
+      // console.log(this.fromArticle);
+      postArticle("", this.fromArticle)
+        .then(res => {
+          // console.log(res);
+          this.$message({
+            type: "success",
+            message: "提交成功",
+            duration: 2000
+          });
+          this.fromArticle.title = "";
+          this.fromArticle.directory = "";
+          this.fromArticle.tags = "";
+          this.fromArticle.content = "";
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>

@@ -22,6 +22,14 @@ const routes = [
         component: () => import('../views/AdminArticle/index.vue')
       },
       {
+        path: '/article/:one',
+        name: 'ArticleOne',
+        meta: {
+          title: '文章更新页面',
+        },
+        component: () => import('../views/AdminArticle/editeArticle.vue')
+      },
+      {
         path: '/user',
         name: 'User',
         meta: {
