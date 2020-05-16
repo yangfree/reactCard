@@ -59,3 +59,8 @@ export const postArticle = (url, params) => {
 export const getArticles = (url, params) => {
   return get('/admin/articles', params);
 }
+
+// 更新文章
+export const putArticle = (url, params) => {
+  return put('/admin/articles', params);
+}

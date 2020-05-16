@@ -6,13 +6,8 @@
       <el-breadcrumb-item>文章管理</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 内容展示区域 -->
-    <el-container>
-      <!-- <ul>
-        <li v-for="(item,index) in articleList" :key="index">
-          <a @click="jumpArticle(item)">{{item.title}}</a>
-        </li>
-      </ul>-->
-      <el-card class="box-card" style="width:100%;margin: 35px;">
+    <el-container class="article-list">
+      <el-card class="box-card">
         <div slot="header" class="clearfix">
           <span>文章列表</span>
         </div>
@@ -21,7 +16,6 @@
           :key="index"
           @click="jumpArticle(item)"
           class="text item"
-          style="fontSize: 14px; padding: 5px 0; text-indent:2em;backgroundColor: #e5e5e5;margin-bottom: 10px;"
         >{{item.title}}</div>
       </el-card>
     </el-container>
@@ -36,6 +30,9 @@
         </el-form-item>
         <el-form-item>
           <el-input v-model="fromArticle.directory" placeholder="请输入文章分类"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input v-model="fromArticle.hot" placeholder="是否热门推荐0代表不是1代表是"></el-input>
         </el-form-item>
         <el-form-item>
           <!-- 富文本编辑器 -->
@@ -66,8 +63,8 @@ export default {
         directory: "",
         tags: "",
         content: "",
-        hot: "0",
-        createTime: "2020-05-15",
+        hot: "",
+        createTime: new Date(),
         updateTime: ""
       }
     };
@@ -107,6 +104,8 @@ export default {
           this.fromArticle.directory = "";
           this.fromArticle.tags = "";
           this.fromArticle.content = "";
+          this.fromArticle.hot = '';
+          this.getArticleList();
         })
         .catch(err => {
           console.log(err);
@@ -119,6 +118,26 @@ export default {
 .admin-article {
   .article-content {
     margin-top: 35px;
+  }
+  .article-list {
+    .box-card {
+      width: 100%;
+      margin: 35px 0 0;
+      .item {
+        font-size: 14px;
+        padding: 5px 0;
+        text-indent: 2em;
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: #777;
+      }
+      .item:nth-child(odd) {
+        background-color: #ffffcc;
+      }
+      .item:nth-child(even) {
+        background-color: #99ffcc;
+      }
+    }
   }
 }
 </style>

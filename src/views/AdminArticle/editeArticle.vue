@@ -19,6 +19,9 @@
           <el-input v-model="fromArticle.directory" placeholder="请输入文章分类"></el-input>
         </el-form-item>
         <el-form-item>
+          <el-input v-model="fromArticle.hot" placeholder="是否热门推荐0代表不是1代表是"></el-input>
+        </el-form-item>
+        <el-form-item>
           <!-- 富文本编辑器 -->
           <mavon-editor v-model="fromArticle.content" ref="editor" placeholder="请输入文章内容" />
         </el-form-item>
@@ -32,7 +35,7 @@
 <script>
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
-import { getArticles } from "@/api/api.js";
+import { putArticle } from "@/api/api.js";
 
 export default {
   name: "AdminArticle",
@@ -42,34 +45,23 @@ export default {
   data() {
     return {
       fromArticle: {
+        id: this.$route.params._id,
         title: this.$route.params.title,
         directory: this.$route.params.directory,
         tags: this.$route.params.tags,
         content: this.$route.params.content,
         hot: this.$route.params.hot,
         createTime: this.$route.params.createTime,
-        updateTime: this.$route.params.updateTime
+        updateTime: new Date()
       }
     };
   },
   created() {
-    this.getArticleList();
-    // console.log(this.$route.params);
+
   },
   methods: {
-    getArticleList() {
-      getArticles()
-      .then(res=>{
-        console.log(res);
-        this.articleList = res;
-      })
-      .catch(err=>{
-        console.log(err);
-      })
-    },
     onSubmit() {
-      // console.log(this.fromArticle);
-      postArticle('', this.fromArticle)
+      putArticle('', this.fromArticle)
       .then(res=>{
         // console.log(res);
         this.$message({
@@ -81,6 +73,8 @@ export default {
         this.fromArticle.directory = '';
         this.fromArticle.tags = '';
         this.fromArticle.content = '';
+        this.fromArticle.hot = '';
+        window.history.go(-1);
       })
       .catch(err=>{
         console.log(err);
