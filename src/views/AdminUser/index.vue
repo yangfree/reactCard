@@ -22,7 +22,7 @@
                 :label="item.label"
                 :value="item.value"
               ></el-option>
-            </el-select> -->
+            </el-select>-->
           </template>
         </el-table-column>
       </el-table>
@@ -35,13 +35,13 @@
   </div>
 </template>
 <script>
-import { getUsersList,deleteUser } from "@/api/api.js";
+import { getUsersList, deleteUser } from "@/api/api.js";
 
 export default {
   name: "AdminUser",
   data() {
     return {
-      tableData: [],
+      tableData: []
       // TODO: 权限相关
       // authority: {
       //   value: "",
@@ -96,28 +96,42 @@ export default {
     },
     delData(rows) {
       // console.log(rows);
-      const id = rows._id;
-      const username = rows.name;
-      deleteUser('',{data: {id: id}})
-      .then(res=>{
-        this.$message({
-          type: 'success',
-          message: `删除${username}用户成功`,
-          duration: 1500
+      this.$confirm("确认删除?")
+        .then(() => {
+          const id = rows._id;
+          const username = rows.name;
+          deleteUser("", { data: { id: id } })
+            .then(res => {
+              this.$message({
+                type: "success",
+                message: `删除${username}用户成功`,
+                duration: 1500
+              });
+              this.getUsersData();
+            })
+            .catch(err => {
+              this.$message({
+                type: "err",
+                message: err,
+                duration: 1500
+              });
+            });
         })
-        this.getUsersData();
-      })
-      .catch(err=>{
-        console.log(err);
-      })
+        .catch(err => {
+          this.$message({
+            type: "info",
+            message: err,
+            duration: 1500
+          });
+        });
     },
     authority() {
       this.$notify({
-        title: '温馨提示:',
-        message: '权限信息后面会更新',
-        position: 'top-right',
-        type: 'warning'
-      })
+        title: "温馨提示:",
+        message: "权限信息后面会更新",
+        position: "top-right",
+        type: "warning"
+      });
     }
   }
 };
