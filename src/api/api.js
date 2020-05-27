@@ -1,5 +1,11 @@
 import { get, post, del, put } from './axios';
 
+// 登陆
+export const userLogin = (url, params) => {
+  return post('/admin/login', params);
+}
+
+
 // 获取基本信息请求
 export const getBasics = (url, params) => {
   return get(`/admin`, params);

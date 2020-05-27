@@ -7,6 +7,17 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    meta: {
+      title: '登陆页面',
+    },
+    component: () => import('../views/AdminLogin/index.vue'),
+  },
+  {
+    path: '/home',
     name: 'Home',
     meta: {
       title: '客户管理首页',
@@ -51,7 +62,7 @@ const routes = [
 
   {
     path: '**',
-    redirect: Home
+    redirect: '/'
   },
 ]
 
