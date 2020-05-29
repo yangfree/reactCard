@@ -7,7 +7,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/login'
+    meta: {
+      requireAuth: true
+    }
   },
   {
     path: '/login',
@@ -53,6 +55,7 @@ const routes = [
         name: 'Web',
         meta: {
           title: '网站管理',
+          requireAuth: true
         },
         component: () => import('../views/AdminWeb/index.vue')
       },

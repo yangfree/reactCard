@@ -43,7 +43,7 @@ export default {
 <style lang='less' scoped>
 .my-login {
   .login-content {
-    margin-top: 20%;
+    margin-top: 15%;
   }
 }
 </style>

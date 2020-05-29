@@ -80,12 +80,16 @@ export default {
           userLogin("", this.ruleForm)
             .then(res => {
               if (res.status === 1 && res.message === "ok") {
-                this.$router.push({
-                  path: "/home"
-                });
                 // 清空登陆框
                 this.ruleForm.name = "";
                 this.ruleForm.pass = "";
+                this.$store.dispatch('setName', res.user_name);
+                this.$store.dispatch('setToken', res.token);
+                // console.log(this.$store);
+                console.log(res);
+                this.$router.push({
+                  path: "/home"
+                });
               } else if (res.status === 2 && res.message === "密码错误") {
                 this.$message({
                   message: "密码错误",

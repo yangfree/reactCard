@@ -4,7 +4,10 @@ import { get, post, del, put } from './axios';
 export const userLogin = (url, params) => {
   return post('/admin/login', params);
 }
-
+// 更改密码
+export const forgetPass = (url, params) => {
+  return post('/admin/forgetpassword', params);
+}
 
 // 获取基本信息请求
 export const getBasics = (url, params) => {

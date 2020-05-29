@@ -24,7 +24,7 @@
             <el-form-item class="btn-bottom">
               <el-button type="success" @click="backLogin">登陆</el-button>
               <el-button @click="resetForm('ruleForm')">重置</el-button>
-              <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+              <el-button type="primary" @click="submitForm">提交</el-button>
             </el-form-item>
           </el-form>
         </el-col>
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import { forgetPass } from "@/api/api.js";
+
 export default {
   name: "ForgetPassword",
   props: {
@@ -86,18 +88,37 @@ export default {
     backLogin() {
       this.$emit("backLogin", this.passwordShow);
     },
-    submitForm(formName) {
-      this.$refs[formName].validate(valid => {
+    submitForm() {
+      this.$refs["ruleForm"].validate(valid => {
         if (valid) {
-          alert("submit!");
+          forgetPass("", this.ruleForm)
+            .then(res => {
+              if (res.nModified === 1) {
+                this.$message({
+                  message: "修改成功",
+                  type: "success"
+                });
+                this.ruleForm.name = "";
+                this.ruleForm.pass = "";
+                this.ruleForm.checkPass = "";
+              } else {
+                this.$message({
+                  message: "用户名不正确",
+                  type: "error"
+                });
+              }
+            })
+            .catch(err => {
+              console.log(err);
+            });
         } else {
           console.log("error submit!!");
           return false;
         }
       });
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    resetForm() {
+      this.$refs["ruleForm"].resetFields();
     }
   }
 };
