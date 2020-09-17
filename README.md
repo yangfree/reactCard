@@ -1,24 +1,5 @@
-# new_liudiao
+# 流调重构
 
-## Project setup
-```
-npm install
-```
+> 这个项目是流调的重构项目,目的是抽离中间层,然后规划编码,去掉冗余的结构.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
