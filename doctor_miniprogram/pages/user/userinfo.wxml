@@ -1,0 +1,66 @@
+<view class="bannerline">
+	<image class="bannerimage" src="/images/background.png"></image>
+	<image class="bannerimage" src="/images/background.png"></image>
+	<image class="bannerimage" src="/images/background.png"></image>
+</view>
+<image class="doctorimage" wx:if="{{dortorimage}}" src="{{dortorimage}}" />
+<view class="doctorname">{{doctor_name}}</view>
+<image class="doctorimage" wx:if="{{!dortorimage}}" src="/images/doctoricon.png" bindtap="uploaddoctorimage" />
+<image class="logoutbutton" src="/images/logout.png" bindtap="bindlogout"></image>
+
+
+<template name="ordertimelist">
+	<van-panel data-id="{{item.id}}" wx:for="{{ordertimelistdata}}" wx:key="id">
+		<van-row>
+			<van-col span="6">
+				<van-panel title="{{item.week_day}}"></van-panel>
+			</van-col>
+			<van-col span="18">
+				<van-panel title="{{item.start_time + ' ~ ' + item.end_time}}"></van-panel>
+			</van-col>
+		</van-row>
+	</van-panel>
+</template>
+
+<view class="titlepart">
+	<view>基本信息</view>
+	<view>
+		<van-button type="info" size="mini" plain="true" bind:click="updateInfo">提交</van-button>
+	</view>
+</view>
+<!-- 内容展示 -->
+<van-cell-group>
+	<van-cell title="医院" value="{{doctor_hospital}}" bindtap="showEditHospital" />
+	<van-cell title="科室" value="{{doctor_department}}" bindtap="showEditDepartment" />
+	<van-cell title="职称" value="{{doctor_good_point}}" bindtap="showEditPoint" />
+	<van-cell title="擅长方向" value="{{doctor_good_at}}" bindtap="showEditGoodAt" />
+</van-cell-group>
+<!-- 点击修改医院 -->
+<van-popup show="{{ update_hospital }}" bind:close="closeUpdate">
+	<van-field value="{{ doctor_hospital }}" placeholder="请输入用户名" bind:change="updateHospital" />
+</van-popup>
+<!-- 点击修改科室 -->
+<van-action-sheet show="{{ update_departmentint }}" title="请选择科室" bind:close="closeUpdate">
+	<view class="point-list">
+		<checkbox-group bindchange="checkboxChange" class="check-group">
+			<label class="check-item" wx:for="{{departments}}" bindtap='updateDepartments' data-selectIndex="{{item.value-1}}" wx:key="index">
+				<checkbox value="{{item.text}}" checked="{{item.checked}}" />{{item.text}}
+			</label>
+		</checkbox-group>
+	</view>
+</van-action-sheet>
+<!-- 点击修改职称 -->
+<van-action-sheet show="{{ update_point }}" title="请选择职称" bind:close="closeUpdate">
+	<view class="point-list">
+		<view class="list-item {{pointIndex == item.value ? 'active' : ''}}" wx:for="{{good_point}}" data-pointIndex="{{item.value}}" wx:key="index" bindtap="updatePoint">{{item.text}}</view>
+	</view>
+</van-action-sheet>
+<!-- 点击修改擅长方向 -->
+<van-popup show="{{ update_good_at }}" bind:close="closeUpdate">
+	<van-field value="{{ doctor_good_at }}" placeholder="请输入擅长方向" bind:change="updateGoodAt" maxlength="12" />
+</van-popup>
+<view class="diliverline"></view>
+
+<van-cell is-link title="预约时段" link-type="navigateTo" bind:click="alertMsg" />
+<van-toast id="van-toast" />
+<view class="diliverline"></view>

@@ -1,0 +1,29 @@
+/* pages/photo/photo.wxss */
+page {
+    --title-color: #0d42c7ce;
+}
+.img {
+  /* align-items:center; */
+  /* flex-direction: column; */
+  /* 水平居中 */
+  display: flex;
+  justify-content: center;
+}
+.upload{
+  margin-top: 8px;
+  margin-left: 5%;
+}
+.notes{
+  padding: 7px !important;
+}
+.van-icon-plus:before {
+  /* content: "\F09C" !important; */
+  color:var(--title-color);
+}
+.van-field__input--textarea{
+  background-color: rgb(240,242,245) !important;
+  min-height:100px !important;
+}
+.van-button--block{
+  width:90% !important;
+}

@@ -1,0 +1,8 @@
+/* components/banner/banner.wxss */
+.banner {
+  width: 100%;
+  min-height: 120rpx;
+}
+.banner image {
+  width: 100%;
+}

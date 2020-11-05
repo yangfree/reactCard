@@ -1,0 +1,77 @@
+<prescription medicinelistdata="{{medicinelistdata}}" history_id="{{history_id}}"></prescription>
+<!-- 注释掉了 -->
+<!-- <template>
+<template name="medicinelist">
+  <view class="medicineline" data-id="{{item.id}}" wx:for="{{medicinelistdata}}" wx:key="id">
+  <van-row>
+    <van-col span="11">
+      <view class="medicineitem">{{item.medicine_name}}</view>
+    </van-col>
+    <van-col span="5">
+      <view class="medicineitem">{{item.medicine_price}}</view>
+    </van-col>
+    <van-col span="8">
+      <van-stepper type="medicinenum" button-size="80rpx" data-key="{{index}}" value="{{item.medicine_num}}" integer="true" bind:change="onMedicineNumChange" /> 
+    </van-col>
+  </van-row>
+  </view>
+</template>
+
+
+<view class="titleline">
+  <view class="titlepart">药品</view>
+  <van-button type="actionbutton" size="small" bind:click="bindaddmedicine">添加药品 
+  </van-button>
+</view>
+
+<van-row>
+  <van-col span="11">
+    <van-panel title="药品名称"></van-panel>   
+  </van-col>
+  <van-col span="5">
+    <van-panel title="单价"></van-panel>   
+  </van-col>
+  <van-col span="8">
+    <van-panel title="数量"></van-panel>   
+  </van-col>
+</van-row>
+
+<van-panel>
+  <template is="medicinelist" data="{{medicinelistdata}}" />
+</van-panel>
+
+<view class="titleline">
+  <view class="titlepart">诊断结论</view>
+</view>
+<van-panel>
+  <van-field
+    value="{{recipe_result}}"
+    type="textarea"
+    placeholder="请输入诊断结论"
+    autosize
+    border="{{ true }}"
+    bind:change="diagnosisInput"
+  />
+</van-panel>
+<view class="blankarea"></view>
+
+<van-row>
+  <van-col span="8">
+    <van-cell title="挂号类型" ></van-cell>
+  </van-col>
+  <van-col span="16">
+    <van-dropdown-menu>
+      <van-dropdown-item type="departmentchoose" value="{{price_type}}" options="{{pricetypeoption}}"  bind:change="onpricetypeChange"/>
+    </van-dropdown-menu>
+  </van-col>
+</van-row>
+
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">取消</van-button>
+  <van-button  type="submit"  bind:click="bindpreviewrecipel">预览  
+  </van-button>
+</view>
+
+<view class="blankarea"></view>
+</template> -->

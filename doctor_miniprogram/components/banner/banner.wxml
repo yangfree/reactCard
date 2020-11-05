@@ -1,0 +1,4 @@
+<!-- 轮播模块,抽离出来 -->
+	<view class="banner">
+		<image src="{{imageSrc}}"></image>
+	</view>

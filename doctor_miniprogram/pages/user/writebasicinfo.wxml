@@ -1,0 +1,43 @@
+<!--pages/user/writebasicinfo.wxml-->
+<van-cell-group>
+<van-field value="{{doctor_name}}" label="姓名" placeholder=""  bind:change="doctornameInput" />
+<van-field value="{{doctor_hospital}}" label="医院" placeholder=""  bind:change="doctorhospitalInput" />
+<van-row>
+  <van-col span="6">
+    <van-cell title="科室" ></van-cell>
+  </van-col>
+  <van-col span="18">
+    <van-dropdown-menu>
+      <van-dropdown-item  value="{{doctor_department}}" options="{{ departmentoption}}"  bind:change="ondoctordepartmentChange"/>
+    </van-dropdown-menu>
+  </van-col>
+</van-row>
+
+<van-field value="{{doctor_good_point}}" label="职称" placeholder=""  bind:change="doctorgoodpointInput" />
+
+<van-field
+  value="{{doctor_good_at}}"
+  type="textarea"
+  label="擅长疾病"
+  autosize
+  placeholder=""
+  border="{{ true }}"
+  bind:change="doctorgoodatInput"
+/>
+<van-field
+  value="{{doctor_summary}}"
+  type="textarea"   
+  label = "主要成果"
+  placeholder=""
+  autosize
+  border="{{ true }}"
+  bind:change="doctorsummaryInput"
+/>
+</van-cell-group>
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">取消</van-button>
+  <van-button  type="submit"  bind:click="bindsubmitdoctorinfo">提交</van-button>
+</view>
+
+<van-toast id="van-toast" />
+

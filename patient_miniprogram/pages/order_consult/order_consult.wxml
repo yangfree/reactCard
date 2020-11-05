@@ -1,0 +1,73 @@
+<user-info></user-info>
+
+<view class="h1">订单信息</view>
+    <van-card
+      num="1"
+      price="{{order_info.order_price}}"
+      title="订单码：{{order_info.order_num}}"
+    >
+      <view slot="desc">
+            <view class="card-desc">支付时间：{{order_info.create_time}}</view>
+            <view class="card-desc">支付状态：<van-tag plain type="danger" custom-class="tag">{{order_info.pay_state}}</van-tag></view>
+            <view class="card-desc">会诊状态：<van-tag plain type="primary" custom-class="tag">{{order_info.business_state}}</van-tag></view>
+      </view>
+    </van-card>
+
+<view class="h1">您预约的时间段</view>
+<view class="content">{{order_info.diag_time}}</view>
+
+
+<view class="h1">您的主诉</view>
+<van-field type="textarea" border="true" autosize show-confirm-bar 
+            value="{{ detail_info.patient_main }}" placeholder="请描述您的病情症状" 
+            bind:change="mainInput" readonly
+            />
+
+<view class="h1">您已上传的语音</view>
+<view class="sound-recording">
+  <!-- //status播放状态 0:未播放 1:正在播放 2:暂停播放 3:已完成播放 -->
+  <view class="anniu">
+    <view class="{{(status==0 || status==2)?'row':'no-clicking'}}" catchtap="play" hover-class="jump-hover">
+      <van-icon name="play-circle-o" size="40px"/>
+    </view>
+    <view class="{{status==1?'row':'no-clicking'}}" catchtap="pause" hover-class="jump-hover">
+      <van-icon name="pause-circle-o" size="40px"/>
+    </view>
+    <!-- <view class="{{status==2?'row':'no-clicking'}}" catchtap="continue_record" hover-class="jump-hover">继续</view> -->
+    <view class="{{(status==1 || status==2)?'row':'no-clicking'}}" catchtap="stop" hover-class="jump-hover">
+      <van-icon name="stop-circle-o" size="40px"/>
+    </view>
+  </view>
+</view>
+
+<view class="h1">您已上传的图片</view>
+<van-image
+  width="10rem"
+  height="10rem"
+  fit="contain"
+  src="{{detail_info.image_one}}"
+/>
+
+<!-- <view class="h1">房间号</view>
+<view style="margin-left:20px">{{detail_info.room_number}}</view> -->
+
+<van-toast id="van-toast" />
+
+<view class='placeholder-view'></view>
+
+<view wx:if="{{order_info.pay_state=='已支付'}}">
+<van-row>
+  <van-col span="10" offset="9">  
+    <van-button type="info" round bind:click="videoMeeting">开始视频</van-button>
+  </van-col>
+</van-row>
+</view>
+<view wx:if="{{order_info.pay_state=='未支付'}}">
+<van-submit-bar
+    price="{{ doctor_info.referral * 100 }}"
+    button-text="重新支付"
+    bind:submit="beginPay"
+    custom-class="van-submit-bar"
+    safe-area-inset-bottom="{{ false }}"
+/>
+</view>

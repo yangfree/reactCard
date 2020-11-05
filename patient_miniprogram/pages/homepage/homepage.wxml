@@ -1,0 +1,59 @@
+<van-row>
+	<van-col span="24">
+		<image src="/images/banner_home.png" style="width:100%;height:200px"></image>
+	</van-col>
+</van-row>
+
+<view class="click-btn-group">
+	<view class="btn-item" bindtap="jumpDoctor">
+		<image src="/images/zhaoyisheng.png" class="img"></image>
+		<text>找医生</text>
+	</view>
+	<view class="btn-item" bindtap="jumpPhoto">
+		<image src="/images/paifangzhuayao.png" class="img"></image>
+		<text>拍方抓药</text>
+	</view>
+	<view class="btn-item" bindtap="tempMedicine">
+		<image src="/images/yunyaofang.png" class="img"></image>
+		<text>云药房</text>
+	</view>
+</view>
+
+<!-- <van-grid clickable column-num="3">
+	<van-grid-item icon="search" link-type="reLaunch" url="/pages/find_doctor/find_doctor.wxml" text="找医生" />
+	<van-grid-item icon="" link-type="reLaunch" url='/pages/photo/photo.wxml' text="拍方抓药"/>
+	<van-grid-item icon="vip-card-o" link-type="reLaunch" url="" text="云药房" bind:click="tempMedicine" />
+</van-grid> -->
+
+<!-- <van-panel>
+  <van-row>
+    <van-col span="22" offset="1">
+      <image class="img" src="/images/shipin.jpg"></image>
+    </van-col>
+  </van-row>
+</van-panel>
+<van-panel>
+  <van-row>
+    <van-col span="22" offset="1">
+      <image class="img" src="/images/tuwen.jpg"></image>
+    </van-col>
+  </van-row>
+</van-panel> -->
+
+<view wx:for="{{articles}}" wx:key="title">
+	<van-notice-bar text="{{item.title}}" backgroundColor="rgb(238,249,254)" color="rgb(69,141,242)" mode="link" speed="15" data-articleinfo="{{item}}" bind:click="toArticle" left-icon="info-o" />
+	<van-divider />
+</view>
+
+<!-- <view class='placeholder-view'></view> -->
+<!-- <van-tabbar
+  active="{{ active }}"
+  bind:change="tabChange"
+  fixed
+>
+  <van-tabbar-item icon="home-o" name="homepage">咨询</van-tabbar-item>
+  <van-tabbar-item icon="/images/find_doc_grey.png" name="find_doctor">找医生</van-tabbar-item>
+  <van-tabbar-item icon="orders-o" name="order_list">我的复诊</van-tabbar-item>
+  <van-tabbar-item icon="scan" name="photo">拍方抓药</van-tabbar-item>
+  <van-tabbar-item icon="user-circle-o" name="account">我的信息</van-tabbar-item>
+</van-tabbar> -->

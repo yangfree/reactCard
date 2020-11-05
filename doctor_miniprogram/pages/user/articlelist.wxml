@@ -1,0 +1,34 @@
+<!--pages/user/articlelist.wxml-->
+<template name="articlelist">
+  <view class="articleitem" data-id="{{item.id}}" wx:for="{{articlelistdata}}" wx:key="id">
+    <view class="articletitle">{{item.title}}</view>
+    <view class="operationtitle">
+      <view class="hotpart">{{'热度：'+item.article_click}}</view>
+      <view class="hotpart">{{item.article_state}}</view>
+    <van-row>
+      <van-col  span="12">
+        <van-button type="buttoninfo" data-key="{{item.id}}" size="small" round  wx:if="{{(item.article_state == '草稿')||(item.article_state == '已撤回')}}"  bind:click="bindmodify">修改</van-button>
+        <van-button type="buttoninfo" data-key="{{item.id}}" size="small" round  wx:if="{{item.article_state == '已发布'}}"  bind:click="binddetail">详情</van-button>
+      </van-col>
+      <van-col  span="12">
+        <van-button data-key="{{item.id}}" type="buttoncreate" size="small" round wx:if="{{(item.article_state == '草稿')||(item.article_state == '已撤回')}}" bind:click="bindpublish">发布</van-button>
+        <van-button data-key="{{item.id}}" type="buttoncreate" size="small" round wx:if="{{item.article_state == '已发布'}}" bind:click="bindrecall">撤回</van-button>
+      </van-col>
+    </van-row>
+    </view>
+  </view>
+</template>
+
+<view class="titleline">
+  <view class="titlepart">文章列表</view>
+  <van-button type="actionbutton" size="small" bind:click="bindcreatenewarticle">写点新的</van-button>
+</view>
+<view class="blankarea"></view>
+
+<view>
+  <template is="articlelist" data="{{articlelistdata}}" />
+</view>
+
+<view class="blankarea"></view>
+<van-toast id="van-toast" />
+

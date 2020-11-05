@@ -1,0 +1,44 @@
+<!--pages/user/addordertime.wxml-->
+<van-cell title="星期" value="{{orderdate}}"  is-link  bind:click="showweekdayPopup" />
+<van-popup show="{{ weekdayshow }}" position="bottom"  closeable="true"  bind:close="onweekdayClose">
+  <van-picker
+    title="星期"
+    columns="{{ weekdayarray }}"
+    bind:change="bindDateChange"
+  />
+</van-popup>
+
+<van-cell title="开始时间" value="{{starttime}}"  is-link  bind:click="showstarttimePopup" />
+<van-popup show="{{starttimeshow }}" position="bottom" >
+  <van-datetime-picker
+    type="time"
+    value="{{ starttime }}"
+    min-hour="8"
+    max-hour="22"
+    filter="{{ filter }}"
+    bind:confirm="bindStartTimeChange"
+    bind:cancel="bindStartTimeCancel"
+  />
+</van-popup>
+
+<van-cell title="结束时间" value="{{endtime}}"  is-link  bind:click="showendtimePopup" />
+<van-popup show="{{endtimeshow }}" position="bottom" >
+  <van-datetime-picker
+    type="time"
+    value="{{ endtime }}"
+    min-hour="8"
+    max-hour="22"
+    filter="{{ filter }}"
+    bind:confirm="bindEndTimeChange"
+    bind:cancel="bindEndTimeCancel"
+  />
+</van-popup>
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">取消</van-button>
+  <van-button  type="submit"  bind:click="bindaddordertime">提交</van-button>
+</view>
+
+<view class="blankarea"></view>
+
+<van-toast id="van-toast" />

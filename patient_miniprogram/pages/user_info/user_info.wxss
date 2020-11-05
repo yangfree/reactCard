@@ -1,0 +1,63 @@
+.topPanel {
+  background-color: floralwhite;
+  height: 180rpx;
+  width: 95%;
+  margin: 0 auto 20rpx;
+  border-radius: 20rpx;
+  /* display: flex; */
+}
+
+/* display:flex ; */
+/* align-items:center; 垂直居中 */
+/* justify-content:center ; //水平居中 */
+
+.panelIcon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panelImg {
+  display: block !important;
+}
+.panelContent {
+  height: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction:column;
+}
+.nickName {
+  font-size: 13px;
+  /* color:darkgrey; */
+}
+.phone {
+  font-size: 12px;
+  color:darkgrey;
+}
+
+.userOption{
+  padding-top: 10px;
+  height:100%;
+  text-align: right;
+}
+.devider-style{
+  color: #1989fa85;
+  border-color: #1989fa;
+  font-size: 18px;
+}
+/* .wux-cell{
+  font-size:14px !important;
+  font-weight:350 !important;
+} */
+.birthday{
+  text-align:left !important;
+  color:black !important;
+}
+.test:before {
+  position: absolute;
+  content: "*";
+  left: 8px;
+  font-size: 14px;
+  color: #ee0a24;
+}

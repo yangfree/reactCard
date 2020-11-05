@@ -1,0 +1,29 @@
+/* pages/order_list/order_list.wxss */
+.tag,
+.button {
+  margin-right: 5px;
+}
+
+.van-card__footer {
+  margin-top: 5px;
+}
+.card-desc{
+  font-size:12px;
+  line-height:20px;
+  color:#646566;
+}
+.top-bar{
+  position: fixed;   
+  top: 0;   
+  left: 0;   
+  right: 0;   
+  background: #fff;   
+  z-index: 10100;
+}
+.content{
+  margin-top: 1px;
+  /* margin-top: var(--dropdown-menu-height,50px); */
+}
+.van-button{
+  height:30px !important;
+}

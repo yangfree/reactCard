@@ -1,0 +1,53 @@
+<view class="main">
+	<!-- 头部模块 -->
+	<view class="logo-title">
+		<view class="bannerline">
+			<image class="companyicon" src="/images/login-banner.png"></image>
+		</view>
+		<view class="titleline">
+			<view class="bigtitle">家庭医生</view>
+			<view class="smalltitle">工作版</view>
+		</view>
+	</view>
+	<!-- 登陆模块 -->
+	<view class="login" wx:if='{{isWho.login}}'>
+		<van-cell-group>
+			<van-field value="{{ login.phone }}" label="手机号" placeholder="请输入手机号" error-message="{{ login.errPhone}}" border="{{ true }}" required='true' bind:change='loginUserPhone' />
+			<van-field value="{{ login.password }}" label="密码" placeholder="请输入密码" error-message="{{login.errPassword}}" icon='eye-o' required='true' password='{{login.passwordHideOrShow}}' bind:change='loginUserPass' bind:click-icon='loginUserClear' />
+		</van-cell-group>
+		<view class="loginbtn-grounp">
+			<view bindtap="bindBtnSignup">新用户注册</view>
+			<view bindtap="bindBtnForgetPwd">忘记密码</view>
+		</view>
+		<van-button type="info" bindtap="handleLogin" block>登陆</van-button>
+		<van-toast id="van-toast" />
+	</view>
+	<!-- 用户注册模块 -->
+	<view class="register" wx:if='{{isWho.register}}'>
+		<van-cell-group>
+			<van-field value="{{ register.phone }}" label="手机号" placeholder="请输入手机号" border="{{ true }}" required='true' bind:change='rigesterUserPhone' />
+			<van-field value="{{ register.validatecode }}" center clearable label="短信验证码" placeholder="请输入短信验证码" border="{{ false }}" required='true' bind:change="registerCode" use-button-slot>
+				<van-button slot="button" size="small" type="primary" bindtap="registerGetCode" disabled="{{showsendcode}}">{{register.codename}}</van-button>
+			</van-field>
+			<van-field value="{{ register.password }}" label="密码" placeholder="请输入密码" icon='eye-o' required='true' password='{{register.passwordHideOrShow}}' bind:change='registerUserPass' bind:click-icon='registerUserClear' />
+			<van-field value="{{ register.repassword }}" label="确认密码" placeholder="请确认密码" icon='eye-o' required='true' password='{{register.passwordConfirm}}' bind:change='registerUserConfirePass' bind:click-icon='registerUserConfirmClear' />
+		</van-cell-group>
+		<view class="back-login" bindtap="bindgotologin">返回登录页面</view>
+		<van-button type="info" bindtap="handleSignup" block>注册</van-button>
+		<van-toast id="van-toast" />
+	</view>
+	<!-- 忘记密码模块 -->
+	<view class="forgetPass" wx:if='{{isWho.forgetPassword}}'>
+		<van-cell-group>
+			<van-field value="{{ forgetPassword.phone }}" label="手机号" placeholder="请输入手机号" border="{{ true }}" required='true' bind:change='forgetPasswordUserPhone' />
+			<van-field value="{{ forgetPassword.validatecode }}" center clearable label="短信验证码" placeholder="请输入短信验证码" border="{{ false }}" required='true' bind:change="forgetPasswordCode" use-button-slot>
+				<van-button slot="button" size="small" type="primary" bindtap="forgetPasswordGetCode" disabled="{{showsendcode}}">{{forgetPassword.codename}}</van-button>
+			</van-field>
+			<van-field value="{{ forgetPassword.password }}" label="密码" placeholder="请输入密码" icon='eye-o' required='true' password='{{forgetPassword.passwordHideOrShow}}' bind:change='forgetPasswordUserPass' bind:click-icon='forgetPasswordUserClear' />
+			<van-field value="{{ forgetPassword.repassword }}" label="确认密码" placeholder="请确认密码" icon='eye-o' required='true' password='{{forgetPassword.passwordConfirm}}' bind:change='forgetPasswordUserConfirePass' bind:click-icon='forgetPasswordUserConfirmClear' />
+		</van-cell-group>
+		<view class="back-login" bindtap="bindgotologin">返回登录页面</view>
+		<van-button type="info" bindtap="handleForgetPassword" block>重置密码</van-button>
+		<van-toast id="van-toast" />
+	</view>
+</view>

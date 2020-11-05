@@ -1,0 +1,12 @@
+<!-- 客服中心 -->
+<view class="customer-service">
+	<!-- <van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical"/> -->
+	<image src="/images/custorm_service.png" mode="widthFix"></image>
+	<van-divider contentPosition="center">客服中心</van-divider>
+	<view class="content">
+		<van-cell-group>
+			<van-cell title="{{service.time}}" value="{{service.serviceTime}}" icon="underway-o" />
+			<van-cell title="{{service.phone}}" value="{{service.servicePhone}}" icon="phone-o" />
+		</van-cell-group>
+	</view>
+</view>

@@ -1,0 +1,65 @@
+<!--pages/treatment/recipelpreview.wxml-->
+<template name="medicinelist">
+  <view data-id="{{item.id}}" wx:for="{{medicinelistdata}}" wx:key="id">
+  <van-row>
+    <van-col span="14">
+      <van-panel title="{{item.medicine_name}}"></van-panel>   
+    </van-col>
+    <van-col span="6">
+      <van-panel title="{{item.medicine_price}}"></van-panel>   
+    </van-col>
+    <van-col span="3">
+      <van-panel title="{{item.medicine_num}}"></van-panel>   
+    </van-col>
+  </van-row>
+  </view>
+</template>
+
+<view class="titleline">
+  <view class="titlepart">药品</view>
+</view>
+<van-panel>
+  <van-row>
+    <van-col span="14">
+      <van-panel title="药品名称"></van-panel>   
+    </van-col>
+    <van-col span="5">
+      <van-panel title="单价"></van-panel>   
+    </van-col>
+    <van-col span="5">
+      <van-panel title="数量"></van-panel>   
+    </van-col>
+  </van-row>
+</van-panel>
+<van-panel>
+  <template is="medicinelist" data="{{medicinelistdata}}" />
+</van-panel>
+
+<view class="titleline">
+  <view class="titlepart">诊断结论</view>
+</view>
+<van-panel>
+  <van-field
+    value="{{recipe_result}}"
+    type="textarea"
+    autosize
+    border="{{ true }}"
+    disabled
+  />
+</van-panel>
+<view class="blankarea"></view>
+
+<van-panel title="{{'挂号类型：' + price_type}}" value="{{price_type}}">
+</van-panel>
+<view class="pricepart">{{'总金额：'+total_price}}</view>
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindmodifyrecipel">返回修改</van-button>
+  <van-button  type="submit"  bind:click="bindconfirmrecipel">提交处方  
+  </van-button>
+</view>
+<view class="blankarea"></view>
+
+
+
+

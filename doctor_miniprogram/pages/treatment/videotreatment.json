@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "视频复诊",
+  "navigationBarBackgroundColor": "#018DF0",
+  "usingComponents": {
+    "trtc-room": "/components/trtc-room/trtc-room"
+  }
+}

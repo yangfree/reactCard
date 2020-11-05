@@ -1,0 +1,104 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/find_doctor/find_doctor",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/message/message",
+    "pages/user_info/user_info",
+    "pages/order_list/order_list",
+    "pages/photo/photo",
+    "pages/choose_doc/choose_doc",
+    "pages/forget_password/forget_password",
+    "pages/account/account",
+    "pages/order_consult/order_consult",
+    "pages/order_success/order_success",
+    "pages/reservation_consult/reservation_consult",
+    "pages/order_medicine/order_medicine",
+    "pages/room/room",
+    "pages/customer-service/index",
+    "pages/files/files",
+    "pages/address_administration/address",
+    "pages/address_administration/addAddress/addAddress",
+    "components/form-address/form-address",
+    "pages/address_administration/updateAddress/updateAddress"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "汉典中医",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#0066CC",
+    "list": [
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页",
+        "iconPath": "./images/home_grey.png",
+        "selectedIconPath": "./images/home_blue.png"
+      },
+      {
+        "pagePath": "pages/find_doctor/find_doctor",
+        "text": "找医生",
+        "iconPath": "./images/find_doc_grey.png",
+        "selectedIconPath": "./images/find_doc_blue.png"
+      },
+      {
+        "pagePath": "pages/photo/photo",
+        "text": "拍方抓药",
+        "iconPath": "./images/paifangzhuayao_grey.png",
+        "selectedIconPath": "./images/paifangzhuayao_blue.png"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "text": "我的信息",
+        "iconPath": "./images/user_grey.png",
+        "selectedIconPath": "./images/user_blue.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-toast": "./vant-dist/toast/index",
+    "van-cell": "./vant-dist/cell/index",
+    "van-cell-group": "./vant-dist/cell-group/index",
+    "van-field": "./vant-dist/field/index",
+    "van-button": "./vant-dist/button/index",
+    "van-grid": "./vant-dist/grid/index",
+    "van-grid-item": "./vant-dist/grid-item/index",
+    "van-tabs": "./vant-dist/tabs/index",
+    "van-tab": "./vant-dist/tab/index",
+    "van-tabbar": "./vant-dist/tabbar/index",
+    "van-tabbar-item": "./vant-dist/tabbar-item/index",
+    "van-search": "./vant-dist/search/index",
+    "van-card": "./vant-dist/card/index",
+    "van-image": "./vant-dist/image/index",
+    "van-row": "./vant-dist/row/index",
+    "van-col": "./vant-dist/col/index",
+    "van-panel": "./vant-dist/panel/index",
+    "van-divider": "./vant-dist/divider/index",
+    "van-uploader": "./vant-dist/uploader/index",
+    "van-submit-bar": "./vant-dist/submit-bar/index",
+    "van-datetime-picker": "./vant-dist/datetime-picker/index",
+    "van-icon": "./vant-dist/icon/index",
+    "van-radio-group": "./vant-dist/radio-group/index",
+    "van-radio": "./vant-dist/radio/index",
+    "van-tag": "./vant-dist/tag/index",
+    "van-dropdown-menu": "./vant-dist/dropdown-menu/index",
+    "van-dropdown-item": "./vant-dist/dropdown-item/index",
+    "van-notice-bar": "./vant-dist/notice-bar/index",
+    "van-sidebar": "./vant-dist/sidebar/index",
+    "van-sidebar-item": "./vant-dist/sidebar-item/index",
+    "van-rate": "./vant-dist/rate/index",
+    "van-dialog": "./vant-dist/dialog/index",
+    "van-stepper": "./vant-dist/stepper/index",
+    "van-index-bar": "./vant-dist/index-bar/index",
+    "van-index-anchor": "./vant-dist/index-anchor/index",
+    "van-popup": "./vant-dist/popup/index",
+    "van-steps": "/vant-dist/steps/index",
+    "van-switch": "/vant-dist/switch/index",
+    "van-skeleton": "/vant-dist/skeleton/index"
+  }
+}

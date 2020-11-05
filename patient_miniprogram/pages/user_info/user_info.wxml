@@ -1,0 +1,65 @@
+<user-info></user-info>
+
+<van-notice-bar
+  wx:if="{{token == ''}}"
+  mode="link"
+  text="您还未注册/登录，请返回注册/登录"
+  bind:click="backToLogin"
+/>
+
+<!-- <view hidden="{{token == ''}}"> -->
+<van-cell-group>
+  <van-field id="username" value="{{ submitUserInfo.username }}" required clearable label="姓名" placeholder="请输入姓名" bind:change="infoInput" />
+  <van-cell title="性别" title-width="90px" data-name="1">
+    <van-radio-group value="{{ submitUserInfo.sex }}" bind:change="chooseSex">
+      <van-row>
+        <van-col span="8">
+          <van-radio name="男">男</van-radio>
+        </van-col>
+        <van-col span="8">
+          <van-radio name="女">女</van-radio>
+        </van-col>
+      </van-row>
+    </van-radio-group>
+  </van-cell>
+  <!-- <van-field id="sex" value="{{ submitUserInfo.sex }}" required clearable label="性别" placeholder="请输入性别" bind:change="infoInput" /> -->
+  <van-field id="nick_name" value="{{ submitUserInfo.nick_name }}" required clearable label="昵称" placeholder="请输入昵称" bind:change="infoInput" />
+  <van-field id="age" readonly type="number" value="{{ submitUserInfo.age }}" required clearable label="年龄" placeholder="会根据您的信息计算得出" bind:change="infoInput" />
+</van-cell-group>
+
+  <van-cell value-class="birthday" title-class="test" title-width="90px" title="出生日期" is-link bind:click="showPopup" value="{{ displayValue }}"/>
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;">
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      max-date="{{ maxDate }}"
+      formatter="{{ formatter }}"
+      bind:confirm="confirmDate"
+      bind:cancel = "cancelDate"
+    />
+  </van-popup>
+
+<van-cell-group>
+  <van-field 
+    id="id_card" 
+    value="{{ submitUserInfo.id_card }}" 
+    required clearable 
+    label="身份证号" 
+    placeholder="请输入身份证号" 
+    bind:change="infoInput" 
+    bind:blur="getBirth"/>
+  <van-field id="position" value="{{ submitUserInfo.position }}" clearable label="职业" placeholder="请输入职业" bind:change="infoInput" />
+  <van-field id="email" value="{{ submitUserInfo.email }}" clearable label="邮箱" placeholder="请输入邮箱" bind:change="infoInput" />
+  <van-field id="phone" type="number" value="{{ submitUserInfo.phone }}" clearable readonly label="手机号" placeholder="请输入手机号" bind:change="infoInput" />
+</van-cell-group>
+
+<van-divider contentPosition="center" custom-style="color: rgb(242,155,115);font-size: 11px;">
+请确保您所填写信息的真实性
+</van-divider>
+
+<van-toast id="van-toast" />
+<van-button type="primary" block small bind:click="updatePerInfo">修改个人信息</van-button>
+<!-- </view> -->
+
+

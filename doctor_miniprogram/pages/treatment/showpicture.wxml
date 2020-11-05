@@ -1,0 +1,4 @@
+<!--pages/treatment/showpicture.wxml-->
+<image class="bigimage"
+  src="{{imageurl}}"
+/>

@@ -1,0 +1,18 @@
+<van-index-bar scroll-top="{{ scrollTop }}">
+  <view>
+    <!-- <van-index-anchor index="A" /> -->
+    <view wx:for="{{datalist}}" wx:key="username">
+      <van-cell clickable title="{{item.username}}" data-docinfo="{{item}}" bind:click="itemClick"/>
+    </view>
+  </view>
+
+  <!-- <view>
+    <van-index-anchor index="B" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+  </view> -->
+
+</van-index-bar>
+
+

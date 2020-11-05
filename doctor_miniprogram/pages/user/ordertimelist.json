@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "预约时段列表",
+  "navigationBarBackgroundColor": "#018DF0",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {}
+}

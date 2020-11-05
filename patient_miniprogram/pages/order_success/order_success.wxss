@@ -1,0 +1,32 @@
+page{
+  background-color: floralwhite;
+}
+.img {
+  flex: none;
+  height: 230rpx;
+  width: 100%;
+}
+.info{
+  /* width:80%; */
+  position:relative;
+  margin-top:20px;
+}
+.topPanel {
+  background-color: white;
+  height: 550rpx;
+  width: 90%;
+  /* margin: 0 auto 20rpx; */
+  border-radius: 20rpx;
+  border: 1px solid #1989fa;
+  position: absolute;
+  left: 20px;
+  top: 140px;
+}
+.mybtn{
+  position: absolute;
+  left:150px;
+  top: 440px;
+}
+.van-button {
+  height:30px !important;
+}

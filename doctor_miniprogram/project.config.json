@@ -1,0 +1,116 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": [
+			{
+				"type": "file",
+				"value": "README.en.md"
+			},
+			{
+				"type": "file",
+				"value": "README.md"
+			},
+			{
+				"type": "file",
+				"value": ".DS_Store"
+			},
+			{
+				"type": "file",
+				"value": ".gitignore"
+			},
+			{
+				"type": "folder",
+				"value": ".git"
+			},
+			{
+				"type": "folder",
+				"value": ".gitee"
+			},
+			{
+				"type": "folder",
+				"value": "node_modules"
+			}
+		]
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enhance": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wx28ab4d309a5ce70d",
+	"projectname": "familydoctor_doctor",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/treatment/treatment",
+					"pathName": "pages/treatment/treatment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recipel/recipel",
+					"pathName": "pages/recipel/recipel",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/userinfo",
+					"pathName": "pages/user/userinfo",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

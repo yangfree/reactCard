@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "开具处方",
+  "navigationBarBackgroundColor": "#018DF0",
+  "usingComponents": {
+    "prescription": "../../components/prescription/prescription"
+  }
+}

@@ -1,0 +1,67 @@
+<!--pages/treatment/recipeldetail.wxml-->
+<template name="medicinelist">
+  <view data-id="{{item.id}}" wx:for="{{medicinelistdata}}" wx:key="id">
+  <van-row>
+    <van-col span="14">
+      <van-panel title="{{item.medicine_name}}"></van-panel>   
+    </van-col>
+    <van-col span="6">
+      <van-panel title="{{item.medicine_price}}"></van-panel>   
+    </van-col>
+    <van-col span="3">
+      <van-panel title="{{item.medicine_num}}"></van-panel>   
+    </van-col>
+  </van-row>
+  </view>
+</template>
+
+<view class="titleline">
+  <view class="titlepart">药品</view>
+  <!-- <van-button type="actionbutton" size="small" bind:click="bindgoback">返回 
+  </van-button> -->
+</view>
+  <van-row>
+    <van-col span="14">
+      <van-panel title="药品名称"></van-panel>   
+    </van-col>
+    <van-col span="5">
+      <van-panel title="单价"></van-panel>   
+    </van-col>
+    <van-col span="5">
+      <van-panel title="数量"></van-panel>   
+    </van-col>
+  </van-row>
+  
+<van-panel>
+  <template is="medicinelist" data="{{medicinelistdata}}" />
+</van-panel>
+
+<view class="titleline">
+	<view class="titlepart">备注信息</view>
+</view>
+<view class='toast-message'>
+	<van-row>
+		<van-col span="22" offset="1">
+			共<text>{{nums}}</text>付,一天<text>{{day_times}}</text>次,使用方法为<text>{{usage == 1 ? '口服' : '外用'}}</text>
+		</van-col>
+	</van-row>
+</view>
+
+<view class="titleline">
+  <view class="titlepart">诊断结论</view>
+</view>
+  <van-field
+    value="{{recipe_result}}"
+    type="textarea"
+    autosize
+    border="{{ false }}"
+    disabled
+  />
+<view class="blankarea"></view>
+
+<!-- <van-panel title="{{'挂号类型：' + price_type}}" value="{{price_type}}">
+</van-panel> -->
+
+<view class="pricepart">{{'总金额：'+total_price}}</view>
+
+

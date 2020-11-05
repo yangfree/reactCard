@@ -1,0 +1,62 @@
+/* pages/files/files.wxss */
+.files {
+  margin: 0;
+  padding: 0 30rpx 35rpx;
+  color: #4b4b4b;
+}
+
+.files view {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.files .title {
+  font-size: 1.2em;
+  text-align: center;
+  padding: 25rpx 0;
+  font-weight: 500;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.files .content-1 {
+  margin-top: 25rpx;
+}
+
+.files .content-1,
+.files .content-2,
+.files .content-3 {
+  margin-bottom: 10rpx;
+}
+
+.files .content-4 .one-title {
+  color: #555;
+  font-weight: 500;
+  padding: 15rpx 0 5rpx 0;
+  margin-bottom: 10rpx;
+  text-align: center;
+  border-bottom: 1px solid rgb(81, 81, 175);
+}
+
+.files .content-4 .two-title {
+  /* text-indent: 2em; */
+  padding: 5rpx 0;
+}
+
+.files .content-4 .three-title {
+  font-size: 0.95em;
+  text-indent: 15rpx;
+}
+
+.files .content-4 .four-title {
+  font-size: 0.9em;
+  text-indent: 30rpx;
+  color: #666;
+  /* background-color: #efefef; */
+}
+
+.files .content-4 .five-title {
+  font-size: 0.8em;
+  color: #777;
+  line-height: 1.5em;
+}

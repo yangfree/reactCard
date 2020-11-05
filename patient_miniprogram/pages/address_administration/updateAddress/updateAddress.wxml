@@ -1,0 +1,6 @@
+<!--pages/address_administration/updateAddress/updateAddress.wxml-->
+<form-address addressData="{{addressConfig}}" bind:submitData="submitData"></form-address>
+<van-toast id="van-toast" />
+<view class="address-btn">
+	<van-button type="danger" block='true' bind:click='saveAddAress'>保存</van-button>
+</view>

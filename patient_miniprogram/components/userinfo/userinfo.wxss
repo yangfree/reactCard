@@ -1,0 +1,63 @@
+/* pages/order_consult/order_consult.wxss */
+.topPanel {
+  background-color: floralwhite;
+  height: 180rpx;
+  width: 95%;
+  margin: 0 auto 20rpx;
+  border-radius: 20rpx;
+  /* display: flex; */
+}
+
+/* display:flex ; */
+/* align-items:center; 垂直居中 */
+/* justify-content:center ; //水平居中 */
+
+.panelIcon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panelImg {
+  display: block !important;
+}
+.panelContent {
+  height: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction:column;
+}
+.nickName {
+  font-size: 13px;
+  /* color:darkgrey; */
+}
+.phone {
+  font-size: 12px;
+  color:darkgrey;
+}
+
+.userOption{
+  padding-top: 10px;
+  height:100%;
+  text-align: right;
+}
+
+.content {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.footer {
+  text-align: right !important;
+}
+
+
+.user-img{
+width: 120rpx;
+height: 120rpx;
+border-radius: 50%;
+overflow: hidden;
+/* margin-top: 100rpx; */
+justify-content: center;
+}

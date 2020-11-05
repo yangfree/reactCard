@@ -1,0 +1,28 @@
+<!--components/form-address/form-address.wxml-->
+<view id="address" bindtap="submitData" class="form-address">
+	<van-cell-group>
+		<van-field required maxlength="5" value="{{ addressData.username }}" label="收货人" type="text" placeholder="请填写收货人姓名" bind:change='_getUsername' bind:blur="submitData"/>
+		<van-field required maxlength="11" value="{{ addressData.phone }}" label="手机号码" type="number" placeholder="请填写收货人手机号" autosize bind:change='_getPhone' bind:blur='submitData'/>
+		<van-field required value="{{ addressData.city }}" label="所在地区" type="text" placeholder="省市县,乡镇等" autosize use-button-slot bind:change='_getCity' bind:blur="submitData">
+			<van-button slot="button" icon="location-o" size="small" type="default" bind:click='_alertMsg'>定位</van-button>
+		</van-field>
+		<van-field required value="{{ addressData.country }}" label="详细地址" type="text" placeholder="街道, 楼牌号等" autosize bind:change='_getCountry' bind:blur="submitData"/>
+	</van-cell-group>
+	<view class="tags">
+		<view class="title">标签</view>
+		<view class="content">
+			<text wx:for='{{tagesChoose}}' wx:key='index' data-index='{{index}}' data-tag="{{item.text}}" class="{{itemIndex===index?'active':''}}" bindtap="_chooseTag">
+			{{item.text}}
+			</text>
+		</view>
+	</view>
+	<view class="default-address">
+		<view class="word">
+			<text>设置为默认地址</text>
+			<van-tag type="warning">提醒: 每次下单时优先选用该地址</van-tag>
+		</view>
+		<view class="btn">
+			<van-switch checked="{{ addressData.isdefault }}" bind:change="_changeDefaultAddress" size='20px' />
+		</view>
+	</view>
+</view>

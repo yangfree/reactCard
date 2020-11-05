@@ -1,0 +1,65 @@
+<!--pages/recipel/recipelpic.wxml-->
+<view class="titleline">
+  <view class="titlepart">患者基本信息</view>
+</view>
+
+<view class="patientinfo">
+  <view class="firstpart">
+    <view class="nameview">{{patientname}}</view>
+    <view class="sexview">{{patientsex}}</view>
+    <view class="birthview">{{patientbirthday}}</view>
+  </view>
+  <view class="secondpart">{{patientphone}}</view>
+  <view class="diliver">
+  </view>
+  <view class="thirdpart">
+    <view class="cardview">{{'身份证号：'+patientid_card}}</view>
+    <view class="positionview">{{'职业：'+patientposition}}</view>
+  </view>
+</view>
+
+<view class="titleline">
+  <view class="titlepart"> 处方图片</view>
+</view>
+<view>
+  <van-row>
+    <van-col span="8">
+      <image class="patientimage" data-key="{{image1url}}"  
+      src="{{image1url}}"  bindtap="bindshowbigpic"/>   
+    </van-col>
+    <van-col span="8">
+      <image class="patientimage" data-key="{{image2url}}" 
+      src="{{image2url}}"  bindtap="bindshowbigpic"/>    
+    </van-col>
+    <van-col span="8">
+      <image class="patientimage" data-key="{{image3url}}" 
+      src="{{image3url}}" bindtap="bindshowbigpic"/>    
+    </van-col>
+  </van-row>
+</view>
+
+<view class="titleline">
+  <view class="titlepart">是否待煎</view>
+</view>
+<van-field
+  value="{{is_boiled}}"
+  type="textarea"
+  autosize
+  border="{{ false }}"
+  disabled
+/>
+
+<view class="titleline">
+  <view class="titlepart">备注</view>
+</view>
+<van-field
+  value="{{illness}}"
+  type="textarea"
+  autosize
+  border="{{ false }}"
+  disabled
+/>
+
+<button  class="bigbutton"  round wx:if="{{state == '待抓药'}}"   bindtap="bindcreaterecipel">开具处方</button>
+<view class="blankarea"></view>
+<van-toast id="van-toast" />

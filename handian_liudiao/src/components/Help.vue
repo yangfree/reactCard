@@ -1,0 +1,110 @@
+<template>
+<div>
+		<div class="navbar navbar-default" style="background-color:#3c8dbc;">
+				<a href="/login" class="navbar-brand">
+					<i class="fa fa-envira" style="color:green;font-style:normal"></i>
+					<span style="color:white;font-size:17px">中医妇科临床流调数据中心</span>
+				</a>
+		</div>
+
+<div class="container">
+
+    <h3>使用指南（网页版）</h3>
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="row">
+                    <div class="col-dm-6">
+                            <h4>1、如何获取登录账号？</h4>
+                            <p>系统不提供开放注册，请项目参与人员联系项目负责人，提供需要账号人员的电子邮箱和手机号等信息，系统维护人员将从后台进行创建，并将密码以邮件形式下发到对应电子邮箱。</p>
+                            <h4>2、如何修改密码？</h4>
+                            <p>登录后，在”项目入口“界面，点击右上角用户，选择“修改密码”，进入修改密码界面进行密码修改。</p>
+                            <div class="row">
+                                <div class="col-dm-6">
+                                    <img class="img-responsive" src="@/assets/help_style/explains_new.png" alt="">
+                                </div>
+                            </div>
+                            <h4>3、忘记密码怎么办？</h4>
+                            <p>请在登录页面，点击“忘记密码”，进入密码申诉界面后，填写电子邮箱进行密码修改申请。
+                                发送申请后，电子邮箱中将会收到一封如下所示的带有新密码的邮件。
+                                （如果被您的邮箱误识别为垃圾邮件，请您去垃圾邮件区查看）
+                            </p>
+                            <div class="row">
+                                <div class="col-dm-6">
+                                    <img class="img-responsive" src="@/assets/help_style/03resetpass.png" alt="">
+                                </div>
+                            </div>
+
+                            <h4> 4、如何录入数据？</h4>
+                            <p>在项目列表页面，点击选择自己所属的项目名称，进入对应项目工作界面。</p>
+                            <p>点击检索栏“新增”按钮，进入数据采集页面。</p>
+                            <div class="row">
+                                <div class="col-dm-6">
+                                    <img class="img-responsive" src="@/assets/help_style/0401datainput_new.png" alt="">
+                                </div>
+                            </div>
+                            <p>系统共提供两种录入数据的方式：</p>
+                            &nbsp;
+                            <p style="font-weight: bold">网页版录入：</p>
+                            <div style="margin-left: 20px">
+
+                                <p>如第4条所述，找到“新增”按钮并点击，在弹出的录入框中填写患者基本信息，不能留空。</p>
+                                <p>全部填写完成后，点击“提交”按钮提交数据，如弹出“录入成功”提示框，则该患者信息已成功创建并录入。如提示“请检查信息是否完整”，
+                                    则证明还有未填写的信息，请重新检查并填写完整。</p>
+                                <p>最新录入的患者信息会展示在首页的第一行，点击需要完善的患者信息，选择要填写的模块，依次填写，直到信息完整度达到“100%”，患者信息录入完毕。</p>
+
+                            </div>
+                            &nbsp;
+                            <p style="font-weight: bold">手机版录入：</p>
+                            <div style="margin-left: 20px">
+
+                                <p>点击侧边栏“移动端录入”，将对应的二维码展示给患者，或者提前下载打印出来，置于诊室。</p>
+                                <p>患者用手机微信或QQ扫描二维码，在打开的问卷页面中按照要求依次填写。</p>
+                                <p>注意由于问卷部分信息具有专业性，<a style="color: red">请务必联系辅助医生</a>，并将辅助医生账号输入在对应信息栏。</p>
+                                <p>全部填写完成后，点击提交按钮提交患者信息</p>
+                                <p>医生后续再以自己的账号登录电脑端，首页会显示患者刚刚提交的信息，医生可以对患者提交的部分信息进一步修正。</p>
+
+                            </div>
+                            &nbsp;
+                                <p style="font-weight: bold">
+                                    相关修改操作区按钮示意如下：
+                                </p>
+                                <div class="row">
+                                    <div class="col-dm-6">
+                                        <img class="img-responsive" src="@/assets/help_style/0404operate_new.png" alt="">
+                                    </div>
+                                </div>
+                    </div>
+                            &nbsp;
+                            <h4>5、如何查看和检索数据？</h4>
+                            <p>1）点击侧边栏的“数据列表”按钮，跳转到数据展示页面</p>
+                            <p>2）输入“患者姓名”、“患者手机”、“患者地区”、“所在医院”的任一信息</p>
+                            <p>3）点击检索，即可显示查询的患者信息</p>
+
+                            <h4>6、如何导出数据？</h4>
+                            <p>此功能主要用于自行开展数据分析用。</p>
+                            <p>1）点击侧边栏的“数据展示”按钮，跳转到数据展示页面</p>
+                            <p>2）输入“患者姓名”、“患者手机”、“患者地区”、“所在医院”的任一信息</p>
+                            <p>3）点击导出excel，即可导出所查询的患者信息</p>
+
+                            <h4>7、数据分析是什么？</h4>
+                            <p>对于一些比较复杂的统计分析，系统开发维护团队可以根据项目组需要，对采集数据进行相关公式计算并生成动态图示；</p>
+                            <p>目前支持直方图、饼图、散点图等</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+</div>
+
+</div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+<style lang="scss" scoped>
+@import "../assets/help_style/bootstrap.css";
+</style>

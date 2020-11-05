@@ -1,0 +1,13 @@
+<!--pages/user/modifyarticle.wxml-->
+<input class="titleinput" value="{{title}}" bindinput="inputtitle"/>
+<textarea  class="contentinput"  value="{{content}}" bindinput="inputcontent"/>
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">取消</van-button>
+  <van-button  type="submit"  bind:click="bindsubmit">提交  
+  </van-button>
+</view>
+
+<view class="blankarea"></view>
+
+<van-toast id="van-toast" />

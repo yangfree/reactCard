@@ -1,0 +1,402 @@
+/* logo头部样式 */
+.logo-title {
+  width: 100%;
+}
+
+/* 登陆模块样式 */
+
+.logo-title .bannerline {
+  text-align: center;
+  margin: 75rpx 0 0;
+}
+
+.logo-title .bannerline .companyicon {
+  height: 154rpx;
+  width: 117rpx;
+}
+
+.logo-title .titleline {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 35rpx 0 75rpx;
+}
+
+.logo-title .bigtitle {
+  width: 393rpx;
+  height: 55rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #018DF0;
+  text-align: right;
+}
+
+.login .loginbtn-grounp {
+  display: flex;
+  justify-content: space-between;
+  margin: 50rpx 0;
+  color: #018DF0;
+  font-size: 24rpx;
+}
+
+.smalltitle {
+  width: 357rpx;
+  height: 55rpx;
+  margin-left: 15rpx;
+  font-size: 50rpx;
+  color: #018DF0;
+  text-align: left;
+}
+
+.back-login {
+  margin: 50rpx 0 50rpx 15rpx;
+  font-size: 24rpx;
+  color: #018DF0;
+}
+/*
+.tipline {
+  width: 100%;
+  height: 55rpx;
+  margin-top: 80rpx;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  text-align: left;
+}
+
+.inputline {
+  display: flex;
+  margin-top: 20rpx;
+  height: 78rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  border-radius: 39rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #dddddd;
+}
+
+.inputicon {
+  margin-top: 20rpx;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 40rpx;
+  margin-left: 30rpx;
+}
+
+.inputpart {
+  margin-top: 10rpx;
+  width: 500rpx;
+  height: 58rpx;
+  font-size: 28rpx;
+}
+
+.linkline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  width: 100%;
+  height: 50rpx;
+}
+
+.leftlink {
+  margin-left: 80rpx;
+  color: #018DF0;
+  font-size: 28rpx;
+  width: 295rpx;
+  height: 50rpx;
+  text-align: left;
+}
+
+.rightlink {
+  color: #018DF0;
+  font-size: 28rpx;
+  width: 295rpx;
+  height: 50rpx;
+  text-align: right;
+}
+
+
+.bigbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  height: 78rpx;
+  background-color: #018df0;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+  color: #ffffff;
+} */
+
+/* 注册模块样式 */
+/* 
+.bannerline {
+  width: 100%;
+  height: 214rpx;
+}
+
+.tipline {
+  width: 100%;
+  height: 55rpx;
+  margin-top: 80rpx;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  text-align: left;
+} */
+
+/* .linkline {
+  margin-top: 20rpx;
+  width: 590rpx;
+  height: 50rpx;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+  color: #018DF0;
+  font-size: 28rpx;
+  text-align: right;
+} */
+
+/* .smallbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  background-color: #018df0;
+  width: 250rpx;
+  height: 78rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+}
+
+
+.bigbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  height: 78rpx;
+  background-color: #018df0;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+  color: #ffffff;
+}
+
+.inputline {
+  display: flex;
+  margin-top: 20rpx;
+  height: 78rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  border-radius: 39rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #dddddd;
+}
+
+.inputcodeline {
+  display: flex;
+}
+
+.inputicon {
+  margin-top: 20rpx;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 40rpx;
+  margin-left: 30rpx;
+}
+
+.inputpart {
+  margin-top: 10rpx;
+  width: 500rpx;
+  height: 58rpx;
+  font-size: 28rpx;
+}
+
+.inputline_small {
+  display: flex;
+  margin-top: 20rpx;
+  width: 410rpx;
+  height: 78rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  border-radius: 39rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #dddddd;
+}
+
+.inputpart_small {
+  margin-top: 10rpx;
+  width: 380rpx;
+  height: 58rpx;
+  font-size: 28rpx;
+}
+
+.countdown {
+  display: -webkit-box;
+  line-height: 78rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  background-color: #b1b1b1;
+  width: 250rpx;
+  height: 78rpx;
+  color: #ffffff;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+} */
+
+
+
+/* 忘记密码模块样式 */
+
+/* pages/user/signup.wxss */
+/* .bannerline {
+  width: 100%;
+  height: 214rpx;
+}
+
+
+
+
+.tipline {
+  width: 100%;
+  height: 55rpx;
+  margin-top: 80rpx;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  text-align: left;
+} */
+
+/* .linkline {
+  margin-top: 20rpx;
+  width: 590rpx;
+  height: 50rpx;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+  color: #018DF0;
+  font-size: 28rpx;
+  text-align: right;
+} */
+
+/* 
+.smallbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  background-color: #018df0;
+  width: 250rpx;
+  height: 78rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+}
+
+
+.countdown {
+  display: -webkit-box;
+  line-height: 78rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  background-color: #b1b1b1;
+  width: 250rpx;
+  height: 78rpx;
+  color: #ffffff;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+}
+
+
+.bigbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  height: 78rpx;
+  background-color: #018df0;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+  color: #ffffff;
+}
+
+
+.inputline {
+  display: flex;
+  margin-top: 20rpx;
+  height: 78rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  border-radius: 39rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #dddddd;
+}
+
+.inputcodeline {
+  display: flex;
+}
+
+.inputicon {
+  margin-top: 20rpx;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 40rpx;
+  margin-left: 30rpx;
+}
+
+.inputpart {
+  margin-top: 10rpx;
+  width: 500rpx;
+  height: 58rpx;
+  font-size: 28rpx;
+}
+
+.inputline_small {
+  display: flex;
+  margin-top: 20rpx;
+  width: 410rpx;
+  height: 78rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  border-radius: 39rpx;
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: #dddddd;
+}
+
+.inputpart_small {
+  margin-top: 10rpx;
+  width: 380rpx;
+  height: 58rpx;
+  font-size: 28rpx;
+} */

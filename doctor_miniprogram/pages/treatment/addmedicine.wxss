@@ -1,0 +1,10 @@
+/* pages/treatment/addmedicine.wxss */
+.blankarea{
+  height: 20rpx;
+}
+.van-button--actionbutton{
+  margin-top: 17rpx;
+  color: #ffffff;
+  background-color:  #018DF0;
+  font-size: 25rpx;
+}

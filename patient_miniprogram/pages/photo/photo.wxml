@@ -1,0 +1,51 @@
+
+<van-cell 
+    title="选择医生" 
+    value="{{doctor.username}}"
+    link-type="navigateTo"
+    url="/pages/choose_doc/choose_doc"
+/>
+
+<van-panel title="上传处方照片">
+  <view class="img">
+    <image src="/images/example.jpg" style="width:90%;height:80px"></image>
+  </view>
+  <view class="upload">
+    <van-uploader
+      name="2"
+      upload-icon="photo"
+      file-list="{{ fileList }}"
+      multiple
+      max-count="3"
+      bind:after-read="afterRead"
+      bind:delete="delete"
+      bind:click-preview="clickPreview"
+    />
+  </view>
+</van-panel>
+
+<van-cell center title="药方付数">
+  <van-stepper value="{{ med_count }}" integer bind:change="medCount"/>
+</van-cell>
+
+<van-cell title='是否代煎'>
+  <van-switch checked="{{medicineStatus}}" size='20px' bind:change="changeMedicineStatus" />
+</van-cell>
+
+<van-panel title="备注">
+  <van-field
+    value="{{ notes }}"
+    type="textarea"
+    placeholder="如对医生有其他要求可写在此处"
+    autosize="{maxHeight:200, minHeight:100}"
+    border="{{ true }}"
+    maxlength="300"
+    show-word-limit="{{true}}"
+    input-class="notes"
+    bind:change="noteInput"
+  />
+</van-panel>
+
+<van-toast id="van-toast" />
+
+<van-button type="primary" block small bind:click="uploadPre">上传处方</van-button>

@@ -1,0 +1,92 @@
+<prescription medicinelistdata="{{medicinelistdata}}" pid="{{id}}" patient_id="{{patient_id}}"></prescription>
+
+
+<!--pages/recipel/createrecipel.wxml-->
+<!-- <template>
+<template name="medicinelist">
+	<view class="medicineline" data-id="{{item.id}}" wx:for="{{medicinelistdata}}" wx:key="id">
+		<van-row>
+			<van-col span="11">
+				<view class="medicineitem">{{item.medicine_name}}</view>
+			</van-col>
+			<van-col span="5">
+				<view class="medicineitem">{{item.medicine_price}}</view>
+			</van-col>
+			<van-col span="8">
+				<van-stepper type="medicinenum" button-size="80rpx" data-key="{{index}}" value="{{item.medicine_num}}" integer="true" bind:change="onMedicineNumChange" />
+			</van-col>
+		</van-row>
+	</view>
+</template>
+<view class="titleline">
+	<view class="titlepart">药品</view>
+	<van-button type="actionbutton" size="small" bind:click="bindaddmedicine">添加药品
+	</van-button>
+</view>
+<van-row>
+	<van-col span="11">
+		<van-panel title="药品名称"></van-panel>
+	</van-col>
+	<van-col span="5">
+		<van-panel title="单价"></van-panel>
+	</van-col>
+	<van-col span="8">
+		<van-panel title="数量"></van-panel>
+	</van-col>
+</van-row>
+<van-panel>
+	<template is="medicinelist" data="{{medicinelistdata}}" />
+</van-panel>
+
+<van-panel>
+	// 生成药方按钮 -->
+	<!-- <van-row class='btn-template'>
+		<van-col span='22' offset='1'>
+			<van-button type='info' block='true' plain='true' loading='{{loadingStatus}}' loading-text='{{loadingText}}' bind:click='createMedication'>生成药方</van-button>
+		</van-col>
+	</van-row> -->
+	<!-- 药方模版 -->
+	<!-- <van-row wx:if='{{medicationTem}}'>
+		<van-panel title="药方" status='{{medicationList.length}}味药' use-footer-slot>
+			<view class="panel-body">
+				<text wx:for='{{medicationList}}' wx:key='index'>
+				{{item.medicine_name}}
+				</text>
+			</view>
+			<view slot="footer" class='btn-right'>
+				<van-tag plain type="warning">单付价: ¥{{singleTotalPrice}}元</van-tag>
+			</view>
+		</van-panel>
+	</van-row> -->
+<!-- </van-panel>
+<view class="titleline">
+	<view class="titlepart">医嘱</view>
+</view>
+<view class="doctor-say">
+	<view class="doctor-say-top">
+		<view class="doctor-input">
+			共 <input type='number' maxlength="4" value="{{medicineNum}}" bindinput="getMedicineNum" /> 付,
+			每日 <input type='number' maxlength="4" value="{{dayNum}}" bindinput="getDayNum" /> 次
+		</view>
+		<view class="doctor-click">
+			<text wx:for="{{medicineUseful}}" wx:key="{{item.code}}" class="{{chooseIndex===index?'active':''}}" data-index="{{index}}" data-code="{{item.code}}" bindtap="chooseUseful">
+			{{item.name}}
+			</text>
+		</view>
+	</view>
+</view>
+
+<view class="titleline">
+	<view class="titlepart">诊断结论</view>
+</view>
+<van-panel>
+	<van-field value="{{recipe_result}}" type="textarea" placeholder="请输入诊断结论" autosize bind:change="diagnosisInput" />
+</van-panel>
+<view class="blankarea"></view>
+
+<view class="buttonline">
+	<van-button type="cancel" bind:click="bindcancel">取消</van-button>
+	<van-button type="submit" bind:click="bindpreviewrecipel">预览
+	</van-button>
+</view>
+</template> -->

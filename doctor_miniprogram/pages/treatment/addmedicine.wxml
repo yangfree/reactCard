@@ -1,0 +1,28 @@
+<!--pages/treatment/addmedicine.wxml-->
+<view class="blankarea"></view>
+<template name="medicinelist">
+  <van-panel data-id="{{item.id}}" wx:for="{{medicinelistdata}}" wx:key="id">
+  <van-row>
+    <van-col span="12">
+      <van-panel title="{{item.officical_name}}">
+      </van-panel>
+    </van-col>
+    <van-col span="6">
+      <van-panel title="{{item.price}}">
+      </van-panel>
+    </van-col>
+    <van-col span="6">
+      <van-button data-key="{{item}}" type="actionbutton" size="small"  bind:click="bindaddmedicine">添加</van-button>
+    </van-col>
+    </van-row>
+  </van-panel>
+</template>
+
+<van-panel >
+  <template is="medicinelist" data="{{medicinelistdata}}" />
+</van-panel>
+
+<van-toast id="van-toast" />
+
+
+

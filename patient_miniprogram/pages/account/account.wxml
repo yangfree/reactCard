@@ -1,0 +1,17 @@
+<van-row class="user-info-banner">
+  <image src="/images/personel_bg.png" mode="widthFix"></image>
+</van-row>
+<user-info></user-info>
+<view class="user-info-content">
+	<van-notice-bar wx:if="{{token == ''}}" mode="link" text="您还未注册/登录，请返回注册/登录" bind:click="backToLogin" />
+	<van-notice-bar wx:if="{{token != '' && !is_info_complete}}" mode="link" text="为了更好的服务您，请填写详细信息" bind:click="backToUserinfo" />
+	<van-grid clickable column-num="1">
+		<van-grid-item icon="home-o" link-type="navigateTo" url="/pages/order_list/order_list" text="查看我的订单信息" />
+	</van-grid>
+	<van-cell wx:if="{{token !== ''}}" is-link title="个人信息" value="完善个人信息" link-type="navigateTo" url="/pages/user_info/user_info" />
+	<van-cell wx:if="{{token !== ''}}" is-link title="地址管理" value="地址管理" link-type="navigateTo" url="" bind:click="address" />
+	<van-cell is-link title="客服中心" link-type="navigateTo" url="/pages/customer-service/index" />
+	<van-cell is-link title="使用须知" link-type="navigateTo" url="/pages/files/files" />
+</view>
+<van-dialog id="van-dialog" />
+<van-button type="primary" block small bind:click="logout">退出登录</van-button>

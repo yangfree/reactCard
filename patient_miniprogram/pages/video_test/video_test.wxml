@@ -1,0 +1,4 @@
+<!-- <trtc-room></trtc-room> -->
+<view class="video-box">
+  <van-button type="primary" bind:click='startVideo'>开始视频</van-button>
+</view>

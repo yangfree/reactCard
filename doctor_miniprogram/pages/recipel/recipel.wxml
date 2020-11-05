@@ -1,0 +1,24 @@
+<banner></banner>
+<van-search value="{{ searchrecipel }}" placeholder="患者姓名/手机号" shape="round" bind:search="bindsearchrecipel" />
+
+<template name="recipellist">
+	<view class="recipelitem" data-id="{{item.id}}" wx:for="{{recipeldata}}" wx:key="id">
+		<van-row>
+			<van-col span="12">
+				<view class="patientname">{{item.patient_info.username}}</view>
+				<view class="patientphone">{{item.patient_info.phone}}</view>
+			</van-col>
+			<van-col span="12" class='recipel-btn'>
+				<van-button type="buttoninfo" data-key="{{item.id}}" size="small" bind:click="bindgotorecipelpic">详情</van-button>
+				<van-button data-key="{{item.id}}" data-patientid="{{item.patient_id}}" type="buttoncreate" size="small" wx:if="{{item.state == '待抓药'}}" bind:click="bindgotorecipelcreate">开方</van-button>
+				<van-button data-key="{{item.history_id}}" type="buttondetail" size="small" wx:else bind:click="bindgotorecipeldetail">处方</van-button>
+			</van-col> 
+		</van-row>
+	</view>
+</template>
+
+<view>
+	<template is="recipellist" data="{{recipeldata}}" />
+</view>
+
+<van-toast id="van-toast" />

@@ -1,0 +1,51 @@
+/* pages/treatment/recipeldetail.wxss */
+
+.titleline{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+}
+.titlepart{
+  width: 540rpx;
+  height: 40rpx;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+  margin-bottom: 35rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #747474;
+  text-align: left;
+}
+
+.van-button--actionbutton{
+  margin-top: 32rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  background-color: #ffffff;
+  color: #018DF0;
+  border-color: #018DF0;
+  border-style: solid;
+  border-width: 1rpx;
+  border-radius: 20%;
+  font-size: 25rpx;
+  width: 150rpx;
+}
+
+.pricepart{
+  width: 690rpx;
+  height: 50rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  color: red;
+  text-align: right;
+}
+
+.blankarea{
+  height: 20rpx;
+}
+
+.toast-message text {
+  color: #ff0000;
+  padding: 0 10rpx;
+}

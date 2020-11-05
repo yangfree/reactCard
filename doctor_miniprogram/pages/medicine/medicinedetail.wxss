@@ -1,0 +1,34 @@
+/* pages/medicine/medicinedetail.wxss */
+.officalnameline{
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  color: #747474;
+  font-weight: bold;
+  height: 40rpx;
+}
+
+.productline{
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #878787;
+  height: 32rpx;
+}
+
+.medicineimage{
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  width: 690rpx;
+  height: 420rpx;
+}
+
+.medicinedetail{
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  width: 690rpx;
+}
+
+.blankarea{
+  height: 50rpx;
+}

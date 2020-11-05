@@ -1,0 +1,116 @@
+/* pages/user/userinfo.wxss */
+.bannerline {
+  width: 750rpx;
+  height: 230rpx;
+}
+
+.bannerimage{
+  position: absolute;
+  width: 750rpx;
+  height: 230rpx;
+}
+
+.doctorimage{
+  position: absolute;
+  left: 30rpx;
+  top: 50rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 20rpx;
+  border-width: 2rpx;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+
+.doctorname{
+  position: absolute;
+  left: 190rpx;
+  top: 99rpx;
+  width:200rpx;
+  height: 35rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+}
+
+
+.logoutbutton{
+  position: absolute;
+  left: 650rpx;
+  top: 90rpx;
+  width: 55rpx;
+  height: 50rpx;
+}
+
+.van-uploader--uploadpart{
+  position: absolute;
+  left: 350rpx;
+  top: 40rpx;
+  width: 55rpx;
+  height: 50rpx;
+}
+
+.diliverline{
+  height: 15rpx;
+  width: 100%;
+  background-color: #f1f1f1
+}
+
+.titleline{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+}
+.titlepart{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25rpx;
+  padding: 0 15px 25rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #747474;
+  text-align: left;
+}
+/* .titlepart .title-icon {
+  font-size: 35rpx;
+  padding: 0 15rpx;
+} */
+
+.van-button--actionbutton{
+  margin-top: 22rpx;
+  margin-right: 30rpx;
+  color: #018DF0;
+  background-color:  #ffffff;
+  border-color: #018DF0;
+  border-style: solid;
+  border-width: 1rpx;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  width: 180rpx;
+}
+
+.blankarea {
+  width: 750rpx;
+  height: 30rpx;
+}
+.point-list {
+  padding: 25rpx;
+}
+.point-list .list-item {
+  font-size: 24rpx;
+  color: #555;
+  text-align: center;
+  line-height: 45rpx;
+  margin-bottom: 15rpx;
+}
+.point-list .check-group {
+  display: flex;
+  flex-direction: column;
+}
+.point-list .check-group .check-item {
+  margin-bottom: 15rpx;
+}
+.point-list .list-item.active {
+  background-color: salmon;
+  color: #fff;
+}

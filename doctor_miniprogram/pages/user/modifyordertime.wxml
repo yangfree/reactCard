@@ -1,0 +1,28 @@
+<!--pages/user/modifyordertime.wxml-->
+<template name="ordertimelist">
+  <van-panel data-id="{{item.id}}" wx:for="{{ordertimelistdata}}" wx:key="id">
+    <van-row>
+      <van-col span="5">
+        <van-panel title="{{item.week_day}}"></van-panel>
+      </van-col>
+      <van-col span="13">
+        <van-panel title="{{item.start_time + ' ~ ' + item.end_time}}"></van-panel>
+      </van-col>
+      <van-col span="6">
+        <van-button  data-key="{{item.id}}"  type="deletebutton" size="small" bind:click="binddeleteordertime">删除</van-button>
+      </van-col>
+    </van-row>
+  </van-panel>
+</template>
+
+<view class="titleline">
+  <view class="titlepart">预约时段</view>
+  <van-button type="actionbutton" size="small" bind:click="bindaddordertime">添加时段</van-button>
+</view>
+
+
+<van-panel>
+  <template is="ordertimelist" data="{{ordertimelistdata}}" />
+</van-panel>
+
+<van-toast id="van-toast" />

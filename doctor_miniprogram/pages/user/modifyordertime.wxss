@@ -1,0 +1,44 @@
+/* pages/user/modifyordertime.wxss */
+.van-button--deletebutton{
+  margin-top: 17rpx;
+  margin-right: 30rpx;
+  color: #018DF0;
+  background-color:  #ffffff;
+  border-color: #018DF0;
+  border-style: solid;
+  border-width: 1rpx;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+}
+
+.titleline{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+}
+.titlepart{
+  width: 500rpx;
+  height: 40rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  margin-bottom: 35rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #747474;
+  text-align: left;
+}
+
+.van-button--actionbutton{
+  margin-top: 22rpx;
+  margin-right: 30rpx;
+  color: #ffffff;
+  background-color:  #018DF0;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  width: 180rpx;
+}
+
+.blankarea {
+  width: 750rpx;
+  height: 30rpx;
+}

@@ -1,0 +1,65 @@
+/* components/form-address/form-address.wxss */
+.tags {
+  border-top: 10rpx solid #f5f5f5;
+  font-size: 26rpx;
+  color: #4b4b4b;
+  padding: 25rpx 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tags .title {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+}
+
+.tags .content {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 0;
+}
+
+.tags .content text {
+  display: flex;
+  min-width: 80rpx;
+  min-height: 40rpx;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid#eee;
+  margin-right: 15rpx;
+  border-radius: 25%;
+  font-size: 22rpx;
+  color: #777;
+}
+.tags .content text.active {
+  border: 1px solid #ff0000;
+}
+.tags .content van-icon {
+  font-size: 30rpx;
+}
+
+.default-address {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.default-address .word {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+
+.btn-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

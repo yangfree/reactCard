@@ -1,0 +1,59 @@
+/* pages/medicine/medicinelist.wxss */
+.van-image--smallimage{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.medicineitem{
+  height: 170rpx;
+  display: flex;
+  width: 100%;
+  border-bottom-color: #dddddd;
+  border-bottom-style: solid;
+  border-bottom-width: 1rpx;
+}
+
+.diliverline{
+  height: 1rpx;
+  background-color: #d5d5d5
+}
+
+.medicineimage{
+  height: 120rpx;
+  width: 120rpx;
+  margin-left: 30rpx;
+  margin-top: 25rpx;
+  border-color: #dddddd;
+  border-style: solid;
+  border-width: 1rpx;
+}
+
+.medicinename{
+  margin-left: 30rpx;
+  margin-top: 40rpx;
+  display: -webkit-box;
+  height: 50rpx;
+  line-height: 50rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden; 
+  text-overflow:ellipsis;
+  text-align: left;
+  font-size: 28rpx;
+}
+
+.medicineprice{
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  height: 30rpx;
+  line-height: 30rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden; 
+  text-overflow:ellipsis;
+  text-align: left;
+  font-size: 25rpx;
+}

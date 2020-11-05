@@ -1,0 +1,12 @@
+<view class="container">
+
+<view class="title">{{article_info.title}}</view>
+
+<van-row custom-class="row">
+  <text>{{article_info.author}}</text>
+  <text>{{article_info.create_time}} </text>
+</van-row>
+
+<view class="content">{{article_info.content}}</view>
+
+</view>

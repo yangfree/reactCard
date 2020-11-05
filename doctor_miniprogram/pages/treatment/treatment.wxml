@@ -1,0 +1,51 @@
+<!--pages/treatment/treatment.wxml-->
+<view class="treatment">
+	<banner></banner>
+	<van-row>
+		<van-search value="{{ searchtreament }}" placeholder="患者姓名/手机号" shape="round" bind:change="searchInput" bind:search="bindsearchtreament" />
+	</van-row>
+	<van-row>
+		<template name="treatmentlist">
+			<van-panel data-id="{{item.id}}" wx:for="{{treatmentdata}}" wx:key="id">
+				<van-cell-group>
+					<van-field value="{{item.business_state}}" label="{{item.username}}" disabled input-align="right" />
+					<van-field value="{{item.order_time}}" label="预约时间" disabled input-align="right" />
+					<van-field value="{{item.patient_main}}" label="复诊诉求" disabled input-align="right" />
+				</van-cell-group>
+				<van-row>
+					<van-col span="6">
+						<van-field label="操作" disabled />
+					</van-col>
+					<van-col span='18' class='btn-operating'>
+						<van-button data-key="{{item.patient_id}}" data-id="{{item.id}}" type="actionbuttonwhite" size="small" bind:click="bindgotorecord">
+							病历
+						</van-button>
+						<van-button data-key="{{item.id}}" type="actionbuttonwhite" size="small" bind:click="bindgotoillness">
+							病情
+						</van-button>
+						<van-button wx:if="{{(item.business_state == '待会诊')&&(item.order_time)}}" type="actionbutton" size="small" data-key="{{item.room_number}}" data-time="{{item.order_time}}" bind:click="bindgotovideotreatment">
+							复诊
+						</van-button>
+						<van-button wx:if="{{(item.business_state == '会诊完成')&&(item.order_time)}}" type="actionbutton" size="small" bind:click="bindgotovideoreplay">
+							回放
+						</van-button>
+					</van-col>
+					<!-- <van-col span="6">
+
+					</van-col>
+					<van-col span="6">
+						
+					</van-col>
+					<van-col span="6">
+
+					</van-col> -->
+				</van-row>
+				<view class="diliverline"></view>
+			</van-panel>
+		</template>
+		<van-panel>
+			<template is="treatmentlist" data="{{treatmentdata}}" />
+		</van-panel>
+		<van-toast id="van-toast" />
+	</van-row>
+</view>

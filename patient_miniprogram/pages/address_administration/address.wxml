@@ -1,0 +1,26 @@
+<!--pages/address_administration/address.wxml-->
+<view class="address">
+	<view class="address-list">
+		<view class="address-list-item" wx:for='{{addressList}}' wx:for-item='address' wx:for-index='index' wx:key='index' bindlongpress="deleteAddress" data-key="{{address.id}}">
+			<view class="address-left">
+				<view class="left-top">
+					<text class="name">{{address.username}}</text>
+					<view class="tel">
+						<text class="num">{{address.phone}}</text>
+						<text class="companey">{{address.tag}}</text>
+						<text class="def" wx:if='{{address.isdefault}}'>默认</text>
+					</view>
+				</view>
+				<view class="left-bottom">
+					<text>{{address.city}}{{address.country}}</text>
+				</view>
+			</view>
+			<view class="address-right">
+				<van-icon name="edit" data-id="{{address.id}}" bindtap="updateAddress" />
+			</view>
+		</view>
+	</view>
+	<view class="address-btn">
+		<van-button type="danger" block='true' bind:click='addAress'>添加地址</van-button>
+	</view>
+</view>

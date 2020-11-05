@@ -1,0 +1,21 @@
+<!--pages/medicine/medicinedetail.wxml-->
+
+<view class="officalnameline">{{officical_name}}</view>
+<view class="productline">{{product_name}}</view>
+<image class="medicineimage" src="{{product_image}}">
+</image >
+<van-cell-group>
+  <van-cell title="类别" value="{{typename}}" />
+  <van-cell title="价格" value="{{price}}" />
+  <van-cell title="规格" value="{{standard}}" />
+  <van-cell title="厂商" value="{{product_source}}" />
+  <van-cell title="适应症" value="{{good_for}}" />
+</van-cell-group>
+
+<view class="officalnameline">说明书：</view>
+
+<view  class="medicinedetail">
+  <rich-text nodes="{{detail}}" ></rich-text>
+</view>
+
+<view class="blankarea"></view>

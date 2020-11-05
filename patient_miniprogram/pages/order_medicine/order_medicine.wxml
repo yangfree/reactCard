@@ -1,0 +1,59 @@
+<user-info></user-info>
+<!-- <van-row custom-class="topPanel">
+  <van-col span="6" custom-class="panelIcon">
+    <van-image round width="80" height="80" src="/images/doc.jpg" custom-class="panelImg"/>
+  </van-col>
+  <van-col span="10" custom-class="panelContent">
+    <view class="nickName">{{user_info.nick_name}}</view>
+    <view class="phone">{{user_info.phone}}</view>
+  </van-col>
+  <van-col span="7" custom-class="userOption">
+    <van-icon name="setting-o" size="20px"/>
+  </van-col>
+</van-row> -->
+
+<van-card num="1" price="{{order_info.order_price}}" title="订单码：{{order_info.order_num}}">
+	<view slot="desc">
+		<view class="card-desc">支付时间：{{order_info.create_time}}</view>
+	</view>
+	<view slot="tags">
+		<van-tag plain type="danger" custom-class="tag">{{order_info.pay_state}}</van-tag>
+		<!-- <van-tag plain type="primary" custom-class="tag">{{order_info.business_state}}</van-tag> -->
+	</view>
+</van-card>
+
+<view class="h1">处方信息</view>
+
+<van-cell title="药方付数" value="{{recipe_info.nums}}付" />
+<van-cell title="服用次数" value="{{recipe_info.day_times}}次" />
+<van-cell title="服用建议" value="{{recipe_info.usage===1?'口服':'外用'}}" />
+  <van-field
+    value="{{recipe_info.recipe_result}}"
+    disabled
+    border="{{ false }}"
+  />
+
+
+<view class="h1">药品信息</view>
+<view class="medicine-list">
+	<van-row gutter='20' class='title'>
+		<van-col span="16">名称</van-col>
+		<van-col span="4">数量</van-col>
+		<van-col span="4">价格</van-col>
+	</van-row>
+	<van-row wx:for="{{medicine_info}}" wx:key="{{index}}" gutter='20' class='body'>
+		<van-col span="16">{{item.medicine_name}}</van-col>
+		<van-col span="4">{{item.medicine_num}}</van-col>
+		<van-col span="4">{{item.medicine_price}}</van-col>
+	</van-row>
+</view>
+
+<van-toast id="van-toast" />
+
+<view class='placeholder-view'></view>
+
+<van-dialog id="van-dialog" />
+
+<view hidden="{{order_info.pay_state=='已支付'}}">
+	<van-submit-bar price="{{ order_info.order_price * 100 }}" button-text="我要支付" bind:submit="beginPay" custom-class="van-submit-bar" safe-area-inset-bottom="{{ false }}" />
+</view>

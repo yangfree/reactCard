@@ -1,0 +1,40 @@
+<!--pages/medicine/medicine.wxml-->
+
+<template name="firstsortlist">
+  <van-sidebar-item wx:for="{{firstsortlistdata}}" wx:key="id" data-key="{{item.id}}" title="{{item.type_name}}" bind:click="bindChooseFirstSort"/>
+</template>
+
+<template name="secondsortlist">
+  <van-panel  wx:for="{{secondsortlistdata}}" wx:for-item="secondsortItem" wx:key="id" data-key="{{secondsortItem.id}}" title="{{secondsortItem.type_name}}" >
+    <van-grid column-num="2">
+      <van-grid-item wx:for="{{secondsortItem.next_type}}"  wx:key="id" 
+      data-key="{{item.type_name}}" text="{{item.type_name}}"  
+       bind:click="bindChooseThirdSort" />
+    </van-grid>
+  </van-panel>
+</template>
+
+<!-- <image class="bannerline" src="/images/banner.png"></image>   -->
+<banner></banner>
+<van-search
+  value="{{ searmedicine }}"
+  placeholder="药品名称"
+  shape="round"
+  bind:search="bindsearchmedicine"
+/>
+
+
+<van-panel>
+<van-row>
+  <van-col span="7">
+    <van-sidebar active-key="{{activeKey}}"  bind:change="onFirstSortChange">
+      <template is="firstsortlist" data="{{firstsortlistdata}}" />
+    </van-sidebar>
+  </van-col>
+  <van-col span="17">
+    <van-panel >
+      <template is="secondsortlist" data="{{secondsortlistdata}}" />
+    </van-panel>
+  </van-col>
+</van-row>
+</van-panel>

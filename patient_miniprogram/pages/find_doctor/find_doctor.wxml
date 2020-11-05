@@ -1,0 +1,56 @@
+<van-row>
+	<van-col span="24">
+		<image class="img" src="/images/banner.png" style="width:100%;height:190px"></image>
+	</van-col>
+</van-row>
+<van-search value="{{ doc_search }}" placeholder="请输入医生姓名" use-action-slot bind:change="infoInput" bind:search="onSearch" id="search">
+	<view slot="action" bind:tap="searchDoctor">搜索</view>
+</van-search>
+
+<van-notice-bar wx:if="{{token != '' && !is_info_complete}}" mode="link" text="为了更好的服务您，请填写详细信息" bind:click="backToUserinfo" />
+
+<view wx:for="{{doc_list}}" wx:key="id">
+	<van-card num="1" price="{{item.referral}}" title="{{item.username}}" thumb="{{(item.user_picture || false) == false?'/images/default.jpg':item.user_picture}}">
+		<view slot="desc">
+			<view class="card-desc">所属医院：{{item.hospital}}</view>
+			<view class="card-desc">主治：{{item.good_at}}</view>
+			<view class="tags-box">
+				<view class="doctor-tags">
+					<van-tag plain type="primary" custom-class="tag" v-if="item.title">{{item.title}}</van-tag>
+					<van-tag plain type="primary" custom-class="tag" v-if="item.field">{{item.field}}</van-tag>
+				</view>
+				<!-- <view class="service-num">
+					<van-tag plain type="primary" custom-class="tag">服务次数{{item.server_times}} </van-tag>
+				</view> -->
+			</view>
+		</view>
+
+		<view slot="footer">
+			<!-- <van-button  disabled="{{!is_info_complete}}" plain type="info" round bind:click="handleClick1">咨询预约</van-button> -->
+			<van-button disabled="{{!is_info_complete}}" plain type="info" data-docinfo="{{item}}" bind:click="consult">复诊预约</van-button>
+		</view>
+	</van-card>
+</view>
+
+<van-toast id="van-toast" />
+
+<!--完善个人信息后显示-->
+<view class="container" wx:if='{{showFiles}}'>
+	<van-dialog use-slot title="用户协议" show="{{protocolShow}}" show-cancel-button show-confirm-button confirm-button-text="同意" cancel-button-text="不同意" cancel-button-color="#ff0000" class="protocol-content" bind:cancel="closeProtocol" bind:confirm="confirmProtocol">
+		<view class="alert-flies">
+			<view>欢迎您使用汉典中医平台!</view>
+			<view>
+				为使用汉典中医平台，您应当阅读并遵守《 汉典中医平台用户服务协议》（以下简称“本协议”）。请您务必审慎阅读、充分理解各条款内容，特别是免除或限制责任的相应条款、法律适用和管辖条款，以及开通或使用某项服务的单独协议，并选择接受或不接受。
+			</view>
+			<view>
+				除非您已阅读并接受本协议所有条款，否则您无权使用汉典中医平台服务（以下简称“本服务”）。您对本服务的登录、查看等使用行为即视为您已阅读并同意本协议的约束。
+			</view>
+			<view>
+				如果您未满18周岁，请在法定监护人的陪同下阅读本协议，并特别注意未成年人使用条款。
+			</view>
+      <view class="text-all" bindtap="goFiles">
+				点击查看完整协议
+			</view>
+		</view>
+	</van-dialog>
+</view>

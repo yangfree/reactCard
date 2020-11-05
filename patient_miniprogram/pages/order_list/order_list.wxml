@@ -1,0 +1,73 @@
+
+<!-- <view class="top-bar">
+  <van-dropdown-menu>
+    <van-dropdown-item bind:change="changeOrderType" value="{{ value1 }}" options="{{ option1 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </van-dropdown-menu>
+</view> -->
+
+<van-tabs bind:click="changeOrderType">
+  <van-tab title="复诊订单">
+
+    <view class="content">
+      <van-search value="{{ search }}" placeholder="医生名字/订单编号/药品编号" use-action-slot bind:change="onChange" bind:search="onSearch">
+        <view slot="action" bind:tap="searchDoctor">搜索</view>
+      </van-search>
+
+      <view wx:for="{{all_order_list}}" wx:key="id">
+        <van-card 
+            num="1" 
+            price="{{item.order_price}}" 
+            title="您预约的医生：{{item.doctor_info.username}}"
+            thumb="{{item.doctor_info.user_picture==''?'/images/doc_pic.jpg':item.doctor_info.user_picture}}"
+            >
+          <view slot="desc">
+            <view class="card-desc">支付时间：{{item.create_time}}</view>
+            <view class="card-desc">支付状态：<van-tag plain type="danger" custom-class="tag">{{item.pay_state}}</van-tag></view>
+            <view class="card-desc">会诊状态：<van-tag plain type="primary" custom-class="tag">{{item.business_state}}</van-tag></view>
+          </view>
+          <!-- <view slot="tags">
+            <van-tag plain type="danger" custom-class="tag">{{item.pay_state}}</van-tag>
+            <van-tag plain type="primary" custom-class="tag">{{item.business_state}}</van-tag>
+          </view> -->
+          <view slot="footer" class="van-card__footer">
+            <van-button type="primary" data-orderid="{{item.id}}" data-ordertype="{{item.question_order_form}}" plain round bind:click="orderContent">
+              查看详情
+            </van-button>
+          </view>
+        </van-card>
+      </view>
+  
+    </view>
+
+  </van-tab>
+
+  <van-tab title="处方订单">
+
+      <view class="content">
+      <van-search value="{{ search }}" placeholder="医生名字/订单编号/药品编号" use-action-slot bind:change="onChange" bind:search="onSearch">
+        <view slot="action" bind:tap="searchDoctor">搜索</view>
+      </van-search>
+
+      <view wx:for="{{all_medicine_list}}" wx:key="id">
+        <van-card num="1" price="{{item.order_price}}" title="订单码：{{item.order_num}}">
+          <view slot="desc">
+            <view class="card-desc">支付时间：{{item.create_time}}</view>
+          </view>
+          <view slot="tags">
+            <van-tag plain type="danger" custom-class="tag">{{item.pay_state}}</van-tag>
+            <!-- <van-tag plain type="primary" custom-class="tag">{{item.business_state}}</van-tag> -->
+            <!-- <van-tag plain type="primary" custom-class="tag">{{item.question_order_form}}</van-tag> -->
+            <!-- <van-tag plain type="danger">标签2</van-tag> -->
+          </view>
+          <view slot="footer" class="van-card__footer">
+            <van-button type="primary" data-orderid="{{item.id}}" data-ordertype="{{item.medicine_order_form}}" plain round bind:click="orderContent">
+              查看详情
+            </van-button>
+          </view>
+        </van-card>
+      </view>
+    </view>
+
+  </van-tab>
+</van-tabs>

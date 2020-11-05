@@ -1,0 +1,32 @@
+<!--pages/files/files.wxml-->
+<view class="files">
+	<van-skeleton title row="30" loading="{{ loading }}">
+		<view class="title">
+			汉典云健康平台用户服务协议
+		</view>
+		<view class="content-1">
+			欢迎您使用汉典云健康平台！
+		</view>
+		<view class="content-2">
+			为使用汉典云健康平台，您应当阅读并遵守《 汉典云健康平台服务协议》（以下简称“本协议”）。请您务必审慎阅读、充分理解各条款内容，特别是免除或限制责任的相应条款、法律适用和管辖条款，以及开通或使用某项服务的单独协议，并选择接受或不接受。限制、免除责任条款及法律适用和管辖条款可能以加粗、下划线形式提示您注意。
+		</view>
+		<view class="content-3">
+			除非您已阅读并接受本协议所有条款，否则您无权使用汉典云健康平台服务（以下简称“本服务”）。您对本服务的登录、查看等使用行为即视为您已阅读并同意本协议的约束。 如果您未满18周岁，请在法定监护人的陪同下阅读本协议，并特别注意未成年人使用条款。
+		</view>
+		<view class='content-4' wx:for='{{fileData}}' wx:for-item='one' wx:for-index='index' wx:key='one'>
+			<view class="one-title">{{one.title}}</view>
+			<view wx:for='{{one.content}}' wx:for-item='two' wx:key='two'>
+				<view class="two-title">{{two.title}}</view>
+				<view wx:for='{{two.content}}' wx:for-item='three' wx:key='three'>
+					<view class="three-title">{{three.title}}</view>
+					<view wx:for='{{three.content}}' wx:for-item='four' wx:key='four'>
+						<view class="four-title">{{four.title}}</view>
+						<view wx:for='{{four.content}}' wx:for-item='five' wx:key='five'>
+							<view class="five-title">{{five.title}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-skeleton>
+</view>

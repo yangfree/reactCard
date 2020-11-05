@@ -1,0 +1,107 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/treatment/treatment",
+    "pages/medicine/medicine",
+    "pages/user/userinfo",
+    "pages/logs/logs",
+    "pages/treatment/medicalrecord",
+    "pages/treatment/recipelwrite",
+    "pages/treatment/recipeldetail",
+    "pages/treatment/recipelpreview",
+    "pages/treatment/medicalrecordwrite",
+    "pages/treatment/illnessdetail",
+    "pages/treatment/videoreplay",
+    "pages/treatment/addmedicine",
+    "pages/user/writebasicinfo",
+    "pages/treatment/videotreatment",
+    "pages/user/modifybasicinfo",
+    "pages/user/modifyordertime",
+    "pages/user/addordertime",
+    "pages/medicine/medicinelist",
+    "pages/medicine/medicinedetail",
+    "pages/treatment/showpicture",
+    "pages/treatment/medicinesearch",
+    "pages/recipel/recipel",
+    "pages/recipel/recipelpic",
+    "pages/recipel/createrecipel",
+    "pages/recipel/previewrecipel",
+    "pages/user/createarticle",
+    "pages/user/modifyarticle",
+    "pages/user/ordertimelist",
+    "pages/user/articlelist",
+    "pages/user/articledetail",
+    "components/banner/banner",
+    "components/prescription/prescription"
+  ],
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#018DF0",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/treatment/treatment",
+        "text": "复诊业务",
+        "iconPath": "images/treatment.png",
+        "selectedIconPath": "images/treatment_current.png"
+      },
+      {
+        "pagePath": "pages/recipel/recipel",
+        "text": "拍方抓药",
+        "iconPath": "images/recipel.png",
+        "selectedIconPath": "images/recipel_current.png"
+      },
+      {
+        "pagePath": "pages/medicine/medicine",
+        "text": "药品检索",
+        "iconPath": "images/medicine.png",
+        "selectedIconPath": "images/medicine_current.png"
+      },
+      {
+        "pagePath": "pages/user/userinfo",
+        "text": "个人信息",
+        "iconPath": "images/userinfo.png",
+        "selectedIconPath": "images/userinfo_current.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "汉典医生",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-row": "@vant/weapp/row",
+    "van-col": "@vant/weapp/col",
+    "van-panel": "@vant/weapp/panel",
+    "van-field": "@vant/weapp/field",
+    "van-image": "@vant/weapp/image",
+    "van-cell": "@vant/weapp/cell",
+    "van-cell-group": "@vant/weapp/cell-group",
+    "van-dialog": "@vant/weapp/dialog",
+    "van-picker": "@vant/weapp/picker",
+    "van-toast": "@vant/weapp/toast",
+    "van-radio": "@vant/weapp/radio",
+    "van-radio-group": "@vant/weapp/radio-group",
+    "van-search": "@vant/weapp/search",
+    "van-stepper": "@vant/weapp/stepper",
+    "van-sidebar": "@vant/weapp/sidebar",
+    "van-sidebar-item": "@vant/weapp/sidebar-item",
+    "van-grid": "@vant/weapp/grid",
+    "van-grid-item": "@vant/weapp/grid-item",
+    "van-uploader": "@vant/weapp/uploader",
+    "van-icon": "@vant/weapp/icon",
+    "van-divider": "@vant/weapp/divider",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu",
+    "van-dropdown-item": "@vant/weapp/dropdown-item",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker",
+    "van-count-down": "@vant/weapp/count-down",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

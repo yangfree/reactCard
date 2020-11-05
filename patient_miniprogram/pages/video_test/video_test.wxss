@@ -1,0 +1,8 @@
+/* pages/video_test/video_test.wxss */
+.video-box {
+  width: 100%;
+  height: 500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

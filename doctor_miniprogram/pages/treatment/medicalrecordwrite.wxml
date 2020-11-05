@@ -1,0 +1,16 @@
+<!--pages/treatment/medicalrecordwrite.wxml-->
+<van-panel  title="本次病历">
+  <van-field
+    value="{{record}}"
+    type="textarea"
+    placeholder="请输入病历内容"
+    autosize
+    border="{{ true }}"
+    bind:change="medicalRecordInput"
+  />
+</van-panel>
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">取消</van-button>
+  <van-button  type="submit"  bind:click="bindsubmitrecord">提交</van-button>
+</view>

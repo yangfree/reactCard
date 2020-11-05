@@ -1,0 +1,5 @@
+/* pages/medicine/medicine.wxss */
+.bannerline {
+  width: 100%;
+  height: 285rpx;
+}

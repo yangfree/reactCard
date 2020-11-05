@@ -1,0 +1,11 @@
+<!--pages/user/articledetail.wxml-->
+<view class="titleinput" >{{title}}</view>
+<textarea  class="contentinput" auto-height disabled="true" value="{{content}}" bindinput="inputcontent"/>
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">返回</van-button>
+</view>
+
+<view class="blankarea"></view>
+
+<van-toast id="van-toast" />

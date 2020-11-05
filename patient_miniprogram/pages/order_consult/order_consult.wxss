@@ -1,0 +1,179 @@
+/* pages/order_consult/order_consult.wxss */
+.topPanel {
+  background-color: floralwhite;
+  height: 180rpx;
+  width: 95%;
+  margin: 0 auto 20rpx;
+  border-radius: 20rpx;
+  /* display: flex; */
+}
+
+/* display:flex ; */
+/* align-items:center; 垂直居中 */
+/* justify-content:center ; //水平居中 */
+
+.panelIcon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panelImg {
+  display: block !important;
+}
+.panelContent {
+  height: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction:column;
+}
+.nickName {
+  font-size: 13px;
+  /* color:darkgrey; */
+}
+.phone {
+  font-size: 12px;
+  color:darkgrey;
+}
+
+.userOption{
+  padding-top: 10px;
+  height:100%;
+  text-align: right;
+}
+
+.content {
+  padding: 2px;
+  font-size: 15px;
+  margin-left: 15px;
+
+}
+
+.footer {
+  text-align: right !important;
+}
+
+.h1{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  font-size:14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#0d42c7ce;
+}
+.tag {
+  margin-right: 5px;
+}
+.card-desc{
+  font-size:12px;
+  line-height:20px;
+  color:#646566;
+}
+.van-button{
+  height:30px !important;
+}
+
+/* 语音部分样式 */
+
+.sound-recording {
+  /* background-color: rgb(193, 214, 205); */
+  background-color: rgb(216, 228, 223);
+  margin: 10rpx 30rpx;
+  border-radius: 20rpx;
+  padding: 5rpx 0rpx;
+}
+.upload-btn{
+  background-color:white;
+  margin: 10rpx 30rpx;
+  padding: 5rpx 0rpx;
+}
+.btn {
+  margin: 0rpx 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn .show {
+  padding: 10rpx;
+  width: 200rpx;
+  font-size: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(178, 228, 228);
+  border-radius: 20rpx;
+  border: 5rpx solid rgb(127, 204, 214);
+}
+
+.btn .hide {
+  padding: 10rpx;
+  width: 200rpx;
+  font-size: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rpx;
+  border: 5rpx solid #eee;
+  pointer-events: none;
+  background-color: rgba(167, 162, 162, 0.445);
+}
+
+.time {
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.progress {
+  margin: 20rpx;
+}
+
+.play {
+  margin: 0rpx 20rpx;
+}
+
+.txt {
+  display: flex;
+  justify-content: center;
+  line-height: 60rpx;
+  font-size: 25rpx;
+}
+
+.anniu {
+  margin: 10rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 25rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-color: rgb(178, 228, 228);
+  border: 5rpx solid rgb(127, 204, 214);
+}
+
+.jump-hover {
+  transform: scale(0.9);
+}
+
+/*禁止点击*/
+
+.anniu .no-clicking {
+  pointer-events: none;
+  background-color: rgba(167, 162, 162, 0.445);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 35rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border: 5rpx solid rgb(241, 244, 245);
+}

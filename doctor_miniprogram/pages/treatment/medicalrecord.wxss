@@ -1,0 +1,118 @@
+/* pages/treatment/medicalrecord.wxss */
+
+/* .titleline{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-right: 15rpx;
+  box-sizing: border-box; */
+/* } */
+.basetitlepart{
+  width: 540rpx;
+  height: 40rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  margin-bottom: 35rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #747474;
+  text-align: left;
+}
+.titlepart{
+  /* width: 440rpx; */
+  /* height: 40rpx; */
+  margin: 15rpx 0;
+  margin-left: 30rpx;
+  /* margin-bottom: 35rpx; */
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #747474;
+  /* text-align: left; */
+}
+
+.van-button--backbutton{
+  margin-top: 22rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  background-color: #ffffff;
+  color: #018DF0;
+  border-color: #018DF0;
+  border-style: solid;
+  border-width: 1rpx;
+  border-radius: 20%;
+  font-size: 25rpx;
+  width: 150rpx;
+}
+
+.van-button--actionbutton{
+  margin-top: 22rpx;
+  margin-right: 30rpx;
+  background-color: #018DF0;
+  color:  #ffffff;
+  font-size: 25rpx;
+  width: 250rpx;
+}
+
+.van-button--bluebutton{
+  width: 180rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+  margin-top: 15rpx;
+  margin-bottom: 30rpx;
+  background-color: #018DF0;
+  font-size: 25rpx;
+  color: white;
+}
+
+.van-button--whitebutton{
+  width: 180rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  background-color: #ffffff;
+  color: #018DF0;
+  font-size: 25rpx;
+  border-color: #018DF0;
+  border-style: solid;
+  border-width: 1rpx;
+  border-radius: 20%;
+}
+
+
+.bigtitle {
+  width: 393rpx;
+  height: 55rpx;
+  margin-top: 70rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #018DF0;
+  text-align: right;
+}
+
+.blankarea{
+  height: 30rpx;
+  width: 100%;
+}
+
+.van-button--bigbutton{
+  margin-top: 100rpx;
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  margin-bottom: 50rpx;
+  width: 550rpx;
+  height: 78rpx;
+  background-color: #018df0;
+  font-size: 32rpx;
+  border-radius: 39rpx;
+  color: #ffffff;
+}
+
+.historytime{
+  height: 35rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  font-size: 25rpx;
+  color: #878787;
+}

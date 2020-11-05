@@ -1,0 +1,24 @@
+<view class="content">
+
+<van-row>
+  <van-col span="24">
+    <image class="img" src="/images/bg.png" style="width:100%;height:145px"></image>
+  </van-col>
+</van-row>
+
+<view class="topPanel">
+  <view class="info">
+    <van-field readonly value="{{doc_info.username}}" label="预约医生" border="{{ false }}" />
+    <van-field readonly value="{{doc_info.order_time}}" label="预约时间" border="{{ false }}" />
+    <van-field readonly value="复诊" label="问诊类型" border="{{ false }}" />
+    <van-field readonly value="{{doc_info.referral}}元" label="挂号费" border="{{ false }}" />
+    <van-field readonly value="{{user_info.username}} | {{user_info.sex}} | {{user_info.age}}" label="就诊人" border="{{ false }}" />
+  </view>
+</view>
+
+  <view class="mybtn">
+        <van-button type="info" block plain round bind:click="orderConfirm">返回主页</van-button>
+  </view>
+
+
+</view>

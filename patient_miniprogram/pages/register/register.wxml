@@ -1,0 +1,61 @@
+<view class="login-icon">
+	<image class="login-img" src="/images/login.png"></image>
+</view>
+
+<van-row>
+	<van-col span="6" offset="7" class="title1">
+		汉典医生
+	</van-col>
+	<van-col span="6" offset="1" class="title2">
+		客户端
+	</van-col>
+</van-row>
+
+<view class="container">
+	<view class="login-from">
+		<!-- 2020-06-04新增身份信息 身份证和昵称 -->
+		<view class="inputView">
+			<image class="nameImage" src="/images/name.png"></image>
+			<input class="inputText" type="text" placeholder="真实姓名" bindinput="usernameInput" />
+		</view>
+		<view class="inputView">
+			<image class="nameImage" src="/images/name.png"></image>
+			<input class="inputText" type="text" placeholder="身份证号" bindinput="cardInput" />
+		</view>
+		<!-- 2020-06-04 新增结束 end -->
+		<view class="inputView">
+			<image class="nameImage" src="/images/name.png"></image>
+			<input class="inputText" type="number" placeholder="手机号" bindinput="phoneInput" />
+		</view>
+
+		<view class="codeView">
+			<view class="leftView">
+				<image class="keyImage" src="/images/key.png"></image>
+				<input class="inputText" type="number" placeholder="短信验证码" bindinput="codeInput" />
+			</view>
+			<view class="rightView">
+				<van-button custom-class="codeBtn" disabled='{{disabled}}' size="small" type="primary" bind:click="validate">{{time}}</van-button>
+			</view>
+		</view>
+
+		<view class="inputView">
+			<image class="keyImage" src="/images/key.png"></image>
+			<input class="inputText" password="true" placeholder="输入密码" bindinput="passwordInput" />
+		</view>
+
+		<view class="inputView">
+			<image class="keyImage" src="/images/key.png"></image>
+			<input class="inputText" password="true" placeholder="确认密码" bindinput="confirmInput" />
+		</view>
+
+		<van-toast id="van-toast" />
+
+		<view class="loginBtnView">
+			<button class="loginBtn" bindtap="register">注册
+			</button>
+			<button class="loginBtn" bindtap="backToLogin">返回登录
+			</button>
+		</view>
+	</view>
+
+</view>

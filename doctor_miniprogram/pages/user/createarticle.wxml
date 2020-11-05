@@ -1,0 +1,13 @@
+<!--pages/user/createarticle.wxml-->
+<input class="titleinput" placeholder=" 文章标题" value="{{title}}" bindinput="inputtitle"/>
+<textarea  class="contentinput"  placeholder=" 文章内容..."  value="{{content}}" bindinput="inputcontent" maxlength='-1' />
+
+<view class="buttonline">
+  <van-button  type="cancel"  bind:click="bindcancel">取消</van-button>
+  <van-button  type="submit"  bind:click="bindsubmit">提交  
+  </van-button>
+</view>
+
+<view class="blankarea"></view>
+
+<van-toast id="van-toast" />

@@ -1,0 +1,17 @@
+<!--pages/medicine/medicinelist.wxml-->
+<template name="meeicinelist">
+  <view wx:for="{{medicinelistdata}}" wx:key="id" data-key="{{item.id}}"  bindtap="bindgotomedicinedetail">
+    <view class="medicineitem">
+      <image class="medicineimage" src="{{item.image_url}}"></image>
+      <view>
+        <view class="medicinename">{{item.officical_name}}</view>
+        <view class="medicineprice">{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<van-panel >
+  <template is="meeicinelist" data="{{medicinelistdata}}" />
+</van-panel>
+<van-toast id="van-toast" />

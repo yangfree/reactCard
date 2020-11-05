@@ -1,0 +1,76 @@
+/* pages/address_administration/address.wxss */
+.address {
+  padding: 0 15px 60px;
+  box-sizing: border-box;
+  font-size: 25rpx;
+  color: #4b4b4b;
+}
+
+.address .address-list .address-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+  padding: 15rpx 0;
+}
+
+.address .address-list .address-list-item .address-left {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+
+.address .address-list .address-list-item .address-left .left-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5rpx;
+}
+
+.address .address-list .address-list-item .address-left .left-top .name {
+  flex: 2;
+}
+
+.address .address-list .address-list-item .address-left .left-top .tel {
+  display: flex;
+  flex-direction: row;
+  flex: 6;
+}
+
+.address .address-list .address-list-item .address-left .left-top .tel .num {
+  font-weight: bold;
+  color: #333;
+  margin-right: 30rpx;
+}
+
+.address .address-list .address-list-item .address-left .left-top .tel .companey,
+.address .address-list .address-list-item .address-left .left-top .tel .def {
+  padding: 2rpx 10rpx;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 5rpx;
+}
+
+.address .address-list .address-list-item .address-left .left-top .tel .companey {
+  margin-right: 15rpx;
+  background-color: rgb(57, 60, 240);
+}
+
+.address .address-list .address-list-item .address-left .left-top .tel .def {
+  background-color: #ff0000;
+}
+
+.address .address-list .address-list-item .address-right {
+  flex: 1;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.address-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
