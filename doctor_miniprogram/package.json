@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.0.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-miniprogram-adapter": "^0.2.4"
   }
 }
